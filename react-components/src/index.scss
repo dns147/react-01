@@ -14,6 +14,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body {
+  margin: 20px;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -36,6 +40,31 @@ h1 {
 
 #nav-menu a.active {
   color: brown;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  width: calc(100vw - 40px);
+  padding: 0;
+
+  .footer-item {
+    display: flex;
+    align-items: center;
+  }
+
+  a:hover {
+    color: brown;
+  }
 }
 
 button {
