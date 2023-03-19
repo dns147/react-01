@@ -1,12 +1,22 @@
 import { ChangeEvent, Component, FormEvent } from 'react';
+import Cards from './cards';
+import cardsData from '../assets/json/data.json';
+import { ICards } from '../utils/types';
 
 type MyProps = {};
-type MyState = { value: string };
+type MyState = {
+  value: string;
+  cards: ICards[];
+};
 
 export default class HomePage extends Component<MyProps, MyState> {
-  constructor(props: string) {
+  constructor(props: MyProps) {
     super(props);
-    this.state = { value: localStorage.getItem('inputValue') ?? '' };
+
+    this.state = {
+      value: localStorage.getItem('inputValue') ?? '',
+      cards: cardsData,
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,6 +25,7 @@ export default class HomePage extends Component<MyProps, MyState> {
   handleSubmit(event: FormEvent): void {
     event.preventDefault();
     localStorage.setItem('inputValue', this.state.value);
+    console.log(cardsData);
   }
 
   handleChange(event: ChangeEvent<HTMLInputElement>): void {
@@ -37,6 +48,7 @@ export default class HomePage extends Component<MyProps, MyState> {
             onChange={this.handleChange}
           />
         </form>
+        <Cards cards={this.state.cards} />
       </>
     );
   }

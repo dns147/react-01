@@ -6,8 +6,8 @@ export default function Root() {
   return (
     <>
       <Header />
-      <Footer />
       <Outlet />
+      <Footer />
     </>
   );
 }
