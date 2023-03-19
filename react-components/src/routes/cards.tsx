@@ -13,7 +13,7 @@ export default class Cards extends Component<MyProps, MyState> {
   render() {
     return (
       <>
-        <div className="cards">
+        <div className="cards" data-testid="card-list">
           {this.props.cards.map((card) => (
             <Card key={card.id} item={card} />
           ))}
