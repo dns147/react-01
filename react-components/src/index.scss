@@ -35,11 +35,11 @@ h1 {
   column-gap: 20px;
   margin-bottom: 30px;
 
-  .nav-home-page.active ~ .current-home-page {
+  .nav-home-page.active ~ .current-about-page {
     display: none;
   }
 
-  .nav-about-page.active ~ .current-about-page {
+  .nav-about-page.active ~ .current-home-page {
     display: none;
   }
 }
