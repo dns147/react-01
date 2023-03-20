@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1679301946329" clover="3.2.0">
-  <project timestamp="1679301946329" name="All files">
+<coverage generated="1679339440362" clover="3.2.0">
+  <project timestamp="1679339440362" name="All files">
     <metrics statements="97" coveredstatements="94" conditionals="8" coveredconditionals="8" methods="8" coveredmethods="7" elements="113" coveredelements="109" complexity="0" loc="97" ncloc="97" packages="1" files="3" classes="3"/>
-    <file name="card.tsx" path="E:\RS_React\Github\react-01\react-components\src\routes\card.tsx">
+    <file name="card.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\routes\card.tsx">
       <metrics statements="26" coveredstatements="26" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
@@ -31,7 +31,7 @@
       <line num="25" count="21" type="stmt"/>
       <line num="26" count="1" type="stmt"/>
     </file>
-    <file name="cards.tsx" path="E:\RS_React\Github\react-01\react-components\src\routes\cards.tsx">
+    <file name="cards.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\routes\cards.tsx">
       <metrics statements="24" coveredstatements="24" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
@@ -58,7 +58,7 @@
       <line num="23" count="1" type="stmt"/>
       <line num="24" count="1" type="stmt"/>
     </file>
-    <file name="search-bar.tsx" path="E:\RS_React\Github\react-01\react-components\src\routes\search-bar.tsx">
+    <file name="search-bar.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\routes\search-bar.tsx">
       <metrics statements="47" coveredstatements="44" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="3"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
