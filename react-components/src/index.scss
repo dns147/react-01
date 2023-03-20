@@ -33,6 +33,15 @@ h1 {
 #nav-menu {
   display: flex;
   column-gap: 20px;
+  margin-bottom: 30px;
+
+  .nav-home-page.active ~ .current-home-page {
+    display: none;
+  }
+
+  .nav-about-page.active ~ .current-about-page {
+    display: none;
+  }
 }
 
 #nav-menu a:hover {
@@ -46,6 +55,7 @@ h1 {
 #search-form {
   display: flex;
   align-items: center;
+  margin-bottom: 30px;
 
   input {
     box-sizing: border-box;

@@ -23,7 +23,6 @@ export default class HomePage extends Component<MyProps, MyState> {
   render() {
     return (
       <>
-        <h1>Home Page</h1>
         <SearchBar value={this.state.value} />
         <Cards cards={this.state.cards} />
       </>

@@ -1,32 +1,18 @@
-import { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-type MyProps = {};
-type MyState = { hash: string };
-
-export default class Header extends Component<MyProps, MyState> {
-  constructor(props: MyProps) {
-    super(props);
-
-    this.state = {
-      hash: '',
-    };
-  }
-
-  updateHash(): string {
-    this.setState({ hash: window.location.pathname.slice(1) });
-    return this.state.hash;
-  }
-
-  render() {
-    return (
-      <>
-        <nav id="nav-menu">
-          <NavLink to="/home">Home</NavLink>
-          <NavLink to="/about">About Us</NavLink>
-          <b>{this.updateHash() + ' page'}</b>
-        </nav>
-      </>
-    );
-  }
+export default function Header() {
+  return (
+    <>
+      <nav id="nav-menu">
+        <NavLink className={'nav-home-page'} to="/home">
+          Home
+        </NavLink>
+        <NavLink className={'nav-about-page'} to="/about">
+          About Us
+        </NavLink>
+        <b className={'current-home-page'}>{'home page'}</b>
+        <b className={'current-about-page'}>{'about page'}</b>
+      </nav>
+    </>
+  );
 }
