@@ -27,7 +27,6 @@ describe('test search bar component', () => {
 
     test('user change data - value save in local storage', async () => {
       await userEvent.type(input[0], '3');
-      await userEvent.type(input[0], '3');
       expect(localStorage.getItem('inputValue')).toBe('183');
     });
   });

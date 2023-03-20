@@ -21,8 +21,9 @@ export default class SearchBar extends Component<MyProps, MyState> {
   }
 
   handleChange(event: ChangeEvent<HTMLInputElement>): void {
-    this.setState({ value: event.target.value });
-    localStorage.setItem('inputValue', this.state.value);
+    const currentValue: string = event.target.value;
+    this.setState({ value: currentValue });
+    localStorage.setItem('inputValue', currentValue);
   }
 
   render() {
