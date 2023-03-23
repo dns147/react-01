@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { ICards } from '../utils/types';
+import { ICards } from '../../types/types';
 import Card from './card';
 
 type MyProps = { cards: ICards[] };

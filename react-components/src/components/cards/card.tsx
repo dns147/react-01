@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { ICards } from '../utils/types';
+import { ICards } from '../../types/types';
 
 type MyProps = { item: ICards };
 type MyState = {};
@@ -10,15 +10,17 @@ export default class Card extends Component<MyProps, MyState> {
   }
 
   render() {
+    const { title, images, description, price, stock } = this.props.item
+    
     return (
       <>
         <div className="item">
-          <h3>{this.props.item.title}</h3>
-          <img src={this.props.item.images} alt="image" width="70" />
-          <p>{this.props.item.description}</p>
-          <b>Price: {this.props.item.price}</b>
+          <h3>{title}</h3>
+          <img src={images} alt="image" width="70" />
+          <p>{description}</p>
+          <b>Price: {price}</b>
           <br />
-          <b>Stock: {this.props.item.stock}</b>
+          <b>Stock: {stock}</b>
         </div>
       </>
     );

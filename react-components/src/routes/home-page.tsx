@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import Cards from './cards';
+import Cards from '../components/cards/cards';
 import cardsData from '../assets/json/data.json';
-import { ICards } from '../utils/types';
-import SearchBar from './search-bar';
+import { ICards } from '../types/types';
+import SearchBar from '../components/search-bar/search-bar';
 
 type MyProps = {};
 type MyState = {

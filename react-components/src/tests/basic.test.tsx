@@ -1,10 +1,10 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, test } from 'vitest';
-import Card from '../routes/card';
-import SearchBar from '../routes/search-bar';
+import Card from '../components/cards/card';
+import SearchBar from '../components/search-bar/search-bar';
 import '@testing-library/jest-dom';
-import Cards from '../routes/cards';
+import Cards from '../components/cards/cards';
 import cardsData from '../assets/json/data.json';
 
 describe('test search bar component', () => {
