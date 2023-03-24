@@ -25,18 +25,20 @@ export default class SearchBar extends Component<MyProps, MyState> {
 
   render() {
     return (
-      <form id="search-form" role="search" onSubmit={this.handleSubmit}>
-        <button type="submit"></button>
-        <input
-          id="q"
-          aria-label="Search field"
-          placeholder="Search"
-          type="search"
-          name="q"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-      </form>
+      <>
+        <form id="search-form" role="search" onSubmit={this.handleSubmit}>
+          <button type="submit"></button>
+          <input
+            id="q"
+            aria-label="Search field"
+            placeholder="Search"
+            type="search"
+            name="q"
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
+        </form>
+      </>
     );
   }
 }

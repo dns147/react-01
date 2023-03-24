@@ -25,18 +25,20 @@ export default class Header extends Component<MyProps, MyState> {
     const firstPage: string = location ? ' page' : 'home page';
 
     return (
-      <nav id="nav-menu" onClick={this.handleClick}>
-        <NavLink className={'nav-home-page'} to="/home">
-          Home
-        </NavLink>
-        <NavLink className={'nav-forms-page'} to="/forms">
-          Forms
-        </NavLink>
-        <NavLink className={'nav-about-page'} to="/about">
-          About Us
-        </NavLink>
-        <b className={'current-page'}>{location + firstPage}</b>
-      </nav>
+      <>
+        <nav id="nav-menu" onClick={this.handleClick}>
+          <NavLink className={'nav-home-page'} to="/home">
+            Home
+          </NavLink>
+          <NavLink className={'nav-forms-page'} to="/forms">
+            Forms
+          </NavLink>
+          <NavLink className={'nav-about-page'} to="/about">
+            About Us
+          </NavLink>
+          <b className={'current-page'}>{location + firstPage}</b>
+        </nav>
+      </>
     );
   }
 }

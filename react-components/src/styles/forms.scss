@@ -1,0 +1,15 @@
+#data-form {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  row-gap: 10px;
+
+  hr {
+    width: 100%;
+  }
+}
+
+#select-planet {
+  display: flex;
+  justify-content: space-between;
+}

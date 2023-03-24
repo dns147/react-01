@@ -11,7 +11,7 @@ import Footer from './components/footer/footer';
 
 export default function App() {
   return (
-    <>
+    <div>
       <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
@@ -21,7 +21,7 @@ export default function App() {
         <Route path="*" element={<ErrorPage />}></Route>
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -10,7 +10,7 @@ export default class Card extends Component<MyProps, MyState> {
   }
 
   render() {
-    const { title, images, description, price, stock } = this.props.item
+    const { title, images, description, price, stock } = this.props.item;
     
     return (
       <>
