@@ -15,13 +15,13 @@ export default class SearchBar extends Component<MyProps, MyState> {
   handleSubmit = (event: FormEvent): void => {
     event.preventDefault();
     localStorage.setItem('inputValue', this.state.value);
-  }
+  };
 
   handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const currentValue: string = event.target.value;
     this.setState({ value: currentValue });
     localStorage.setItem('inputValue', currentValue);
-  }
+  };
 
   render() {
     return (

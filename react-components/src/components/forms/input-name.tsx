@@ -13,8 +13,6 @@ export default class InputName extends Component<MyProps, MyState> {
   }
 
   render() {
-    return (
-      <input type="text" placeholder="Name" ref={this.nameField} />
-    );
+    return <input type="text" placeholder="Name" ref={this.nameField} />;
   }
 }

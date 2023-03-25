@@ -18,23 +18,23 @@ export default class CheckboxAccess extends Component<MyProps, MyState> {
         <form className="checkbox-access" ref={this.accessField}>
           <b>Get access:</b>
           <label>
-            Control module: 
+            Control module:
             <input type="checkbox" name="access" value="control" />
           </label>
           <label>
-            Cargo module: 
+            Cargo module:
             <input type="checkbox" name="access" value="cargo" />
           </label>
           <label>
-            Engine module: 
+            Engine module:
             <input type="checkbox" name="access" value="engine" />
           </label>
           <label>
-            Crew module: 
+            Crew module:
             <input type="checkbox" name="access" value="crew" />
           </label>
           <label>
-            Medical module: 
+            Medical module:
             <input type="checkbox" name="access" value="medical" />
           </label>
         </form>

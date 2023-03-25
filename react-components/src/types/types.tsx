@@ -14,7 +14,7 @@ export interface IUserData {
   surname: string | undefined;
   date: string | undefined;
   planet: string | undefined;
-  access: FormDataEntryValue[],
+  access: FormDataEntryValue[];
   typeOfCrew: FormDataEntryValue | null;
-  foto: string | undefined;
+  urlFoto: string | ArrayBuffer | null;
 }

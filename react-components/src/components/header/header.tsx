@@ -14,11 +14,11 @@ export default class Header extends Component<MyProps, MyState> {
       location: location.pathname.slice(1),
     };
   }
-  
+
   handleClick = (): void => {
     const currentPathname: string = location.pathname.slice(1);
     this.setState({ location: currentPathname });
-  }
+  };
 
   render() {
     const { location } = this.state;

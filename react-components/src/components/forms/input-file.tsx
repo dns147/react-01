@@ -9,6 +9,7 @@ export default class InputFile extends Component<MyProps, MyState> {
 
   constructor(props: MyProps) {
     super(props);
+
     this.fileField = React.createRef();
   }
 

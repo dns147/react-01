@@ -13,8 +13,6 @@ export default class InputDate extends Component<MyProps, MyState> {
   }
 
   render() {
-    return (
-      <input type="date" ref={this.dateField} />
-    );
+    return <input type="date" ref={this.dateField} />;
   }
 }
