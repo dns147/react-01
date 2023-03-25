@@ -3,6 +3,8 @@
   width: fit-content;
   flex-direction: column;
   row-gap: 10px;
+  padding: 10px;
+  box-shadow: white 0px 0px 6px 3px;
 
   hr {
     width: 100%;
@@ -12,4 +14,9 @@
 #select-planet {
   display: flex;
   justify-content: space-between;
+}
+
+.checkbox-access {
+  display: flex;
+  flex-direction: column;
 }

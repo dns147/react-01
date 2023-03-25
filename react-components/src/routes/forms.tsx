@@ -1,111 +1,71 @@
-import { ChangeEvent, Component, FormEvent } from 'react';
+import { Component, FormEvent } from 'react';
+import React from 'react';
+import InputName from '../components/forms/input-name';
 import '../styles/forms.scss';
-import { IFoto, IUserData } from '../types/types';
+import { IUserData } from '../types/types';
+import InputSurname from '../components/forms/input-surname';
+import InputDate from '../components/forms/input-date';
+import SelectPlanet from '../components/forms/select-planet';
+import CheckboxAccess from '../components/forms/checkbox-access';
+import RadioTypeOfCrew from '../components/forms/radio-typeofcrew';
+import InputFile from '../components/forms/input-file';
 
 type MyProps = {};
-type MyState = { 
-  userData: IUserData,
-};
+type MyState = {};
 
 export default class Forms extends Component<MyProps, MyState> {
-  date: Date;
+  userName: React.RefObject<InputName>;
+  userSurname: React.RefObject<InputSurname>;
+  userDate: React.RefObject<InputDate>;
+  userPlanet: React.RefObject<SelectPlanet>;
+  userAccess: React.RefObject<CheckboxAccess>;
+  userTypeOfCrew: React.RefObject<RadioTypeOfCrew>;
+  userFoto: React.RefObject<InputFile>;
 
   constructor(props: MyProps) {
     super(props);
 
-    this.date = new Date('2023, 0, 22');
-
-    this.state = { userData: {
-      name: '',
-      surname: '',
-      date: '',
-      planet: '',
-      access: [],
-      typeOfCrew: '',
-      foto: ''
-    }};
+    this.userName = React.createRef();
+    this.userSurname = React.createRef();
+    this.userDate = React.createRef();
+    this.userPlanet = React.createRef();
+    this.userAccess = React.createRef();
+    this.userTypeOfCrew = React.createRef();
+    this.userFoto = React.createRef();
   }
 
   handleSubmit = (event: FormEvent): void => {
     event.preventDefault();
-    const formData = new FormData(event.target as HTMLFormElement);
+    const formDataAccess = new FormData(this.userAccess.current?.accessField.current as HTMLFormElement);
+    const formDataTypeOfCrew = new FormData(this.userTypeOfCrew.current?.radioField.current as HTMLFormElement);
 
-    const data: IUserData = {
-      name: formData.get('name'),
-      surname: formData.get('surname'),
-      date: formData.get('date'),
-      planet: formData.get('planet'),
-      access: formData.getAll('access'),
-      typeOfCrew: formData.get('typeOfCrew'),
-      foto: formData.get('foto'),
+    const dataUser: IUserData = {
+      name: this.userName.current?.nameField.current?.value,
+      surname: this.userSurname.current?.surnameField.current?.value,
+      date: this.userDate.current?.dateField.current?.value,
+      planet: this.userPlanet.current?.planetField.current?.value,
+      access: formDataAccess.getAll('access'),
+      typeOfCrew: formDataTypeOfCrew.get('typeOfCrew'),
+      foto: this.userFoto.current?.fileField.current?.value
     };
 
-    this.setState({ userData: data });
-
-    console.log(data);
-    console.log(this.state.userData);
+    console.log(dataUser);
   }
 
   render() {
     return (
       <form id="data-form" onSubmit={this.handleSubmit}>
-        <input type="text" name="name" placeholder="Name" />
-        <input type="text" name="surname" placeholder="Surname" />
-        <input type="date" name="date" />
-        
+        <InputName ref={this.userName} />
+        <InputSurname ref={this.userSurname} />
+        <InputDate ref={this.userDate} />
         <hr />
-        <label id="select-planet">
-          Destination:
-          <select name="planet">
-            <option value="mars">Mars</option>
-            <option value="jupiter">Jupiter</option>
-            <option value="saturn">Saturn</option>
-            <option value="neptune">Neptune</option>
-          </select>
-        </label>
-        
+        <SelectPlanet ref={this.userPlanet} />        
         <hr />
-        <b>Get access:</b>
-        <label>
-          Control module: 
-          <input type="checkbox" name="access" value="control" />
-        </label>
-        <label>
-          Cargo module: 
-          <input type="checkbox" name="access" value="cargo" />
-        </label>
-        <label>
-          Engine module: 
-          <input type="checkbox" name="access" value="engine" />
-        </label>
-        <label>
-          Crew module: 
-          <input type="checkbox" name="access" value="crew" />
-        </label>
-        <label>
-          Medical module: 
-          <input type="checkbox" name="access" value="medical" />
-        </label>
-        
+        <CheckboxAccess ref={this.userAccess} />       
         <hr />
-        <p>
-          Type of crew:
-          <label>
-            <input type="radio" name="typeOfCrew" value="military" />
-            Military
-          </label>
-          <label>
-            <input type="radio" name="typeOfCrew" value="civilian" />
-            Civilian
-          </label>
-        </p>
-
+        <RadioTypeOfCrew ref={this.userTypeOfCrew} />
         <hr />
-        <label>
-          Upload your foto:
-          <input type="file" name="foto" accept="image/*" />
-        </label>
-
+        <InputFile ref={this.userFoto} />
         <hr />
         <button type="submit">Send</button>
       </form>
