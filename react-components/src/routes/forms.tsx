@@ -1,4 +1,4 @@
-import { Component, FormEvent } from 'react';
+import { Component, FormEvent, ReactElement } from 'react';
 import React from 'react';
 import InputName from '../components/forms/input-name';
 import '../styles/forms.scss';
@@ -14,6 +14,7 @@ import UserCard from '../components/userCard/userCard';
 type MyProps = {};
 type MyState = {
   users: IUserData[];
+  isSaved: boolean;
 };
 
 export default class Forms extends Component<MyProps, MyState> {
@@ -24,6 +25,7 @@ export default class Forms extends Component<MyProps, MyState> {
   userAccess: React.RefObject<CheckboxAccess>;
   userTypeOfCrew: React.RefObject<RadioTypeOfCrew>;
   userFoto: React.RefObject<InputFile>;
+  confirmation: ReactElement | null;
 
   constructor(props: MyProps) {
     super(props);
@@ -36,50 +38,87 @@ export default class Forms extends Component<MyProps, MyState> {
     this.userTypeOfCrew = React.createRef();
     this.userFoto = React.createRef();
 
-    this.state = { users: [] };
+    this.state = {
+      users: [],
+      isSaved: false,
+    };
+
+    this.confirmation = null;
   }
 
-  handleSubmit = (event: FormEvent): void => {
-    event.preventDefault();
+  loadFileAsync(file: File): Promise<unknown> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
 
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+
+  async getUrlFile(file: File): Promise<void> {
+    try {
+      const imageUrl = await this.loadFileAsync(file);
+      this.fillUserInfo(String(imageUrl));
+      this.clearForm();
+      this.setState({ isSaved: false });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  fillUserInfo(imageUrl: string): void {
     const formDataAccess = new FormData(
       this.userAccess.current?.accessField.current as HTMLFormElement
     );
     const formDataTypeOfCrew = new FormData(
       this.userTypeOfCrew.current?.radioField.current as HTMLFormElement
     );
-    const reader = new FileReader();
-    let file: File;
+
+    const dataUser: IUserData = {
+      name: this.userName.current?.nameField.current?.value,
+      surname: this.userSurname.current?.surnameField.current?.value,
+      date: this.userDate.current?.dateField.current?.value,
+      planet: this.userPlanet.current?.planetField.current?.value,
+      access: formDataAccess.getAll('access'),
+      typeOfCrew: formDataTypeOfCrew.get('typeOfCrew'),
+      urlFoto: imageUrl,
+    };
+
+    const currentUsers = this.state.users;
+    const dataUsers = [...currentUsers, dataUser];
+
+    this.setState({ users: dataUsers });
+  }
+
+  clearForm(): void {
+    const inputName = this.userName.current?.nameField.current as HTMLInputElement;
+    inputName.value = '';
+  }
+
+  handleSubmit = (event: FormEvent): void => {
+    event.preventDefault();
+
+    this.setState({ isSaved: true });
 
     if (this.userFoto.current?.fileField.current?.files) {
-      file = this.userFoto.current?.fileField.current?.files[0];
-
-      reader.onloadend = () => {
-        const imagePreviewUrl = reader.result;
-
-        const dataUser: IUserData = {
-          name: this.userName.current?.nameField.current?.value,
-          surname: this.userSurname.current?.surnameField.current?.value,
-          date: this.userDate.current?.dateField.current?.value,
-          planet: this.userPlanet.current?.planetField.current?.value,
-          access: formDataAccess.getAll('access'),
-          typeOfCrew: formDataTypeOfCrew.get('typeOfCrew'),
-          urlFoto: imagePreviewUrl,
-        };
-
-        const currentUsers = this.state.users;
-        const dataUsers = [...currentUsers, dataUser];
-
-        this.setState({ users: dataUsers });
-
-        console.log(dataUsers);
-      };
-
-      reader.readAsDataURL(file);
+      const file = this.userFoto.current?.fileField.current?.files[0];
+      this.getUrlFile(file);
     }
   };
 
   render() {
+    let confirmation: ReactElement;
+
+    if (this.state.isSaved) {
+      confirmation = <h2 className="confirmation-message">Data Successfully Saved</h2>;
+    } else {
+      confirmation = <h2 className="confirmation-message">User Info</h2>;
+    }
+
     return (
       <>
         <form id="data-form" onSubmit={this.handleSubmit}>
@@ -97,6 +136,8 @@ export default class Forms extends Component<MyProps, MyState> {
           <hr />
           <button type="submit">Send</button>
         </form>
+
+        {confirmation}
 
         <div className="user-cards">
           {this.state.users.map((user: IUserData, index: number) => (
