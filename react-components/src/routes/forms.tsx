@@ -7,7 +7,7 @@ import InputSurname from '../components/forms/input-surname';
 import InputDate from '../components/forms/input-date';
 import SelectPlanet from '../components/forms/select-planet';
 import CheckboxAccess from '../components/forms/checkbox-access';
-import RadioTypeOfCrew from '../components/forms/radio-typeofcrew';
+import RadioTypeCrew from '../components/forms/radio-typeofcrew';
 import InputFile from '../components/forms/input-file';
 import UserCard from '../components/userCard/userCard';
 
@@ -23,7 +23,7 @@ export default class Forms extends Component<MyProps, MyState> {
   userDate: React.RefObject<InputDate>;
   userPlanet: React.RefObject<SelectPlanet>;
   userAccess: React.RefObject<CheckboxAccess>;
-  userTypeOfCrew: React.RefObject<RadioTypeOfCrew>;
+  userTypeCrew: React.RefObject<RadioTypeCrew>;
   userFoto: React.RefObject<InputFile>;
   confirmation: ReactElement | null;
 
@@ -35,7 +35,7 @@ export default class Forms extends Component<MyProps, MyState> {
     this.userDate = React.createRef();
     this.userPlanet = React.createRef();
     this.userAccess = React.createRef();
-    this.userTypeOfCrew = React.createRef();
+    this.userTypeCrew = React.createRef();
     this.userFoto = React.createRef();
 
     this.state = {
@@ -70,21 +70,48 @@ export default class Forms extends Component<MyProps, MyState> {
     }
   }
 
+  getCheckAccess(): string[] {
+    const inputAccess1 = this.userAccess.current?.accessField1.current as HTMLInputElement;
+    const inputAccess2 = this.userAccess.current?.accessField2.current as HTMLInputElement;
+    const inputAccess3 = this.userAccess.current?.accessField3.current as HTMLInputElement;
+    const inputAccess4 = this.userAccess.current?.accessField4.current as HTMLInputElement;
+    const inputAccess5 = this.userAccess.current?.accessField5.current as HTMLInputElement;
+
+    const getValueCheck = (input: HTMLInputElement) => (input.checked ? input.value : '');
+
+    const userAccesses = [
+      getValueCheck(inputAccess1),
+      getValueCheck(inputAccess2),
+      getValueCheck(inputAccess3),
+      getValueCheck(inputAccess4),
+      getValueCheck(inputAccess5),
+    ];
+
+    return userAccesses.filter((access) => access);
+  }
+
+  getCheckRadio(): string[] {
+    const inputTypeCrew1 = this.userTypeCrew.current?.radioField1.current as HTMLInputElement;
+    const inputTypeCrew2 = this.userTypeCrew.current?.radioField2.current as HTMLInputElement;
+
+    const getValueCheck = (input: HTMLInputElement) => (input.checked ? input.value : '');
+
+    const userTypeCrew = [getValueCheck(inputTypeCrew1), getValueCheck(inputTypeCrew2)];
+
+    return userTypeCrew.filter((item) => item);
+  }
+
   fillUserInfo(imageUrl: string): void {
-    const formDataAccess = new FormData(
-      this.userAccess.current?.accessField.current as HTMLFormElement
-    );
-    const formDataTypeOfCrew = new FormData(
-      this.userTypeOfCrew.current?.radioField.current as HTMLFormElement
-    );
+    const userAccesses: string[] = this.getCheckAccess();
+    const userTypeCrew: string[] = this.getCheckRadio();
 
     const dataUser: IUserData = {
       name: this.userName.current?.nameField.current?.value,
       surname: this.userSurname.current?.surnameField.current?.value,
       date: this.userDate.current?.dateField.current?.value,
       planet: this.userPlanet.current?.planetField.current?.value,
-      access: formDataAccess.getAll('access'),
-      typeOfCrew: formDataTypeOfCrew.get('typeOfCrew'),
+      access: userAccesses,
+      typeCrew: userTypeCrew,
       urlFoto: imageUrl,
     };
 
@@ -96,7 +123,30 @@ export default class Forms extends Component<MyProps, MyState> {
 
   clearForm(): void {
     const inputName = this.userName.current?.nameField.current as HTMLInputElement;
+    const inputSurname = this.userSurname.current?.surnameField.current as HTMLInputElement;
+    const inputDate = this.userDate.current?.dateField.current as HTMLInputElement;
+    const selectPlanet = this.userPlanet.current?.planetField.current as HTMLSelectElement;
+    const checkboxAccess1 = this.userAccess.current?.accessField1.current as HTMLInputElement;
+    const checkboxAccess2 = this.userAccess.current?.accessField2.current as HTMLInputElement;
+    const checkboxAccess3 = this.userAccess.current?.accessField3.current as HTMLInputElement;
+    const checkboxAccess4 = this.userAccess.current?.accessField4.current as HTMLInputElement;
+    const checkboxAccess5 = this.userAccess.current?.accessField5.current as HTMLInputElement;
+    const typeCrew1 = this.userTypeCrew.current?.radioField1.current as HTMLInputElement;
+    const typeCrew2 = this.userTypeCrew.current?.radioField2.current as HTMLInputElement;
+    const inputFile = this.userFoto.current?.fileField.current as HTMLInputElement;
+
     inputName.value = '';
+    inputSurname.value = '';
+    inputDate.value = '';
+    selectPlanet.value = '';
+    checkboxAccess1.checked = false;
+    checkboxAccess2.checked = false;
+    checkboxAccess3.checked = false;
+    checkboxAccess4.checked = false;
+    checkboxAccess5.checked = false;
+    typeCrew1.checked = false;
+    typeCrew2.checked = false;
+    inputFile.value = '';
   }
 
   handleSubmit = (event: FormEvent): void => {
@@ -130,7 +180,7 @@ export default class Forms extends Component<MyProps, MyState> {
           <hr />
           <CheckboxAccess ref={this.userAccess} />
           <hr />
-          <RadioTypeOfCrew ref={this.userTypeOfCrew} />
+          <RadioTypeCrew ref={this.userTypeCrew} />
           <hr />
           <InputFile ref={this.userFoto} />
           <hr />

@@ -4,28 +4,31 @@ import React from 'react';
 type MyProps = {};
 type MyState = {};
 
-export default class RadioTypeOfCrew extends Component<MyProps, MyState> {
-  radioField: React.RefObject<HTMLFormElement>;
+export default class RadioTypeCrew extends Component<MyProps, MyState> {
+  radioField1: React.RefObject<HTMLInputElement>;
+  radioField2: React.RefObject<HTMLInputElement>;
 
   constructor(props: MyProps) {
     super(props);
-    this.radioField = React.createRef();
+
+    this.radioField1 = React.createRef();
+    this.radioField2 = React.createRef();
   }
 
   render() {
     return (
       <>
-        <form className="radio-typeofcrew" ref={this.radioField}>
+        <div className="radio-typeofcrew">
           <b>Type of crew: </b>
           <label>
-            <input type="radio" name="typeOfCrew" value="military" />
+            <input type="radio" name="typeCrew" value="military" ref={this.radioField1} />
             Military
           </label>
           <label>
-            <input type="radio" name="typeOfCrew" value="civilian" />
+            <input type="radio" name="typeCrew" value="civilian" ref={this.radioField2} />
             Civilian
           </label>
-        </form>
+        </div>
       </>
     );
   }

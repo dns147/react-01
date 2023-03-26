@@ -10,7 +10,7 @@ export default class UserCard extends Component<MyProps, MyState> {
   }
 
   render() {
-    const { name, surname, date, planet, access, typeOfCrew, urlFoto } = this.props.userData;
+    const { name, surname, date, planet, access, typeCrew, urlFoto } = this.props.userData;
     let imageUser = null;
 
     if (urlFoto) {
@@ -23,11 +23,27 @@ export default class UserCard extends Component<MyProps, MyState> {
         <div className="user-cards-item">
           <h3>{String(name) + ' ' + String(surname)}</h3>
           {imageUser}
-          <p>{planet}</p>
-          <p>{date}</p>
-          <b>Access: {String(access[0])}</b>
           <br />
-          <b>TypeOfCrew: {String(typeOfCrew)}</b>
+          <b>
+            Destination: <span className="access-item item-planet">{planet}</span>
+          </b>
+          <br />
+          <b>
+            Departure date: <span className="access-item">{date}</span>
+          </b>
+          <br />
+          <b>
+            Access:{' '}
+            {access.map((item: string, index: number) => (
+              <span className="access-item" key={index}>
+                {item}{' '}
+              </span>
+            ))}
+          </b>
+          <br />
+          <b>
+            TypeOfCrew: <span className="access-item">{typeCrew[0]}</span>
+          </b>
         </div>
       </>
     );

@@ -9,6 +9,11 @@
   hr {
     width: 100%;
   }
+
+  button:hover {
+    cursor: pointer;
+    background: #bed85f;
+  }
 }
 
 #select-planet {
@@ -31,6 +36,14 @@
   .user-cards-item {
     padding: 10px;
     box-shadow: white 0px 0px 6px 3px;
+
+    .access-item {
+      font-weight: normal;
+    }
+
+    .item-planet {
+      text-transform: capitalize;
+    }
 
     h3 {
       margin-top: 0;

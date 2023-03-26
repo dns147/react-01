@@ -16,7 +16,8 @@ export default class SelectPlanet extends Component<MyProps, MyState> {
     return (
       <label id="select-planet">
         <b>Destination:</b>
-        <select name="planet" ref={this.planetField}>
+        <select name="planet" defaultValue="" ref={this.planetField}>
+          <option value="default"></option>
           <option value="mars">Mars</option>
           <option value="jupiter">Jupiter</option>
           <option value="saturn">Saturn</option>

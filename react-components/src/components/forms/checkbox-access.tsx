@@ -5,39 +5,48 @@ type MyProps = {};
 type MyState = {};
 
 export default class CheckboxAccess extends Component<MyProps, MyState> {
-  accessField: React.RefObject<HTMLFormElement>;
+  accessField1: React.RefObject<HTMLInputElement>;
+  accessField2: React.RefObject<HTMLInputElement>;
+  accessField3: React.RefObject<HTMLInputElement>;
+  accessField4: React.RefObject<HTMLInputElement>;
+  accessField5: React.RefObject<HTMLInputElement>;
 
   constructor(props: MyProps) {
     super(props);
-    this.accessField = React.createRef();
+
+    this.accessField1 = React.createRef();
+    this.accessField2 = React.createRef();
+    this.accessField3 = React.createRef();
+    this.accessField4 = React.createRef();
+    this.accessField5 = React.createRef();
   }
 
   render() {
     return (
       <>
-        <form className="checkbox-access" ref={this.accessField}>
+        <div className="checkbox-access">
           <b>Get access:</b>
           <label>
             Control module:
-            <input type="checkbox" name="access" value="control" />
+            <input type="checkbox" name="access" value="control" ref={this.accessField1} />
           </label>
           <label>
             Cargo module:
-            <input type="checkbox" name="access" value="cargo" />
+            <input type="checkbox" name="access" value="cargo" ref={this.accessField2} />
           </label>
           <label>
             Engine module:
-            <input type="checkbox" name="access" value="engine" />
+            <input type="checkbox" name="access" value="engine" ref={this.accessField3} />
           </label>
           <label>
             Crew module:
-            <input type="checkbox" name="access" value="crew" />
+            <input type="checkbox" name="access" value="crew" ref={this.accessField4} />
           </label>
           <label>
             Medical module:
-            <input type="checkbox" name="access" value="medical" />
+            <input type="checkbox" name="access" value="medical" ref={this.accessField5} />
           </label>
-        </form>
+        </div>
       </>
     );
   }
