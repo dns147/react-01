@@ -282,7 +282,7 @@ export default class Forms extends Component<MyProps, MyState> {
 
     return (
       <>
-        <form id="data-form" onSubmit={this.handleSubmit}>
+        <form id="data-form" data-testid="data-form" onSubmit={this.handleSubmit}>
           <InputName ref={this.userName} />
           {errorName}
           <InputSurname ref={this.userSurname} />

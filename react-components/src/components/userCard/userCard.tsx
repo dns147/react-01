@@ -20,7 +20,7 @@ export default class UserCard extends Component<MyProps, MyState> {
 
     return (
       <>
-        <div className="user-cards-item">
+        <div className="user-cards-item" data-testid="user-cards-item">
           <h3>{String(name) + ' ' + String(surname)}</h3>
           {imageUser}
           <br />

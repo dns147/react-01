@@ -28,7 +28,13 @@ export default class CheckboxAccess extends Component<MyProps, MyState> {
           <b>Get access:</b>
           <label>
             Control module:
-            <input type="checkbox" name="access" value="control" ref={this.accessField1} />
+            <input
+              type="checkbox"
+              aria-label="access-input"
+              name="access"
+              value="control"
+              ref={this.accessField1}
+            />
           </label>
           <label>
             Cargo module:
