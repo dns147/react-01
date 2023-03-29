@@ -6,7 +6,6 @@ import SearchBar from '../components/search-bar/search-bar';
 
 type MyProps = {};
 type MyState = {
-  value: string;
   cards: ICards[];
 };
 
@@ -15,7 +14,6 @@ export default class HomePage extends Component<MyProps, MyState> {
     super(props);
 
     this.state = {
-      value: localStorage.getItem('inputValue') ?? '',
       cards: cardsData,
     };
   }
@@ -23,7 +21,7 @@ export default class HomePage extends Component<MyProps, MyState> {
   render() {
     return (
       <>
-        <SearchBar value={this.state.value} />
+        <SearchBar />
         <Cards cards={this.state.cards} />
       </>
     );
