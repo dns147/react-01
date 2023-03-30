@@ -18,3 +18,7 @@ export interface IUserData {
   typeCrew: string[];
   urlFoto: string | ArrayBuffer | null;
 }
+
+export interface ICardProps {
+  cardItem: ICards;
+}

@@ -13,8 +13,9 @@ describe('test search bar component', () => {
     let input: HTMLInputElement[];
 
     beforeEach(() => {
-      render(<SearchBar value={inputValue} />);
+      render(<SearchBar />);
       input = screen.getAllByLabelText('Search field');
+      input[0].value = inputValue;
     });
 
     test('check default value', () => {
@@ -46,12 +47,12 @@ describe('test cards component', () => {
   };
 
   test('it renders', () => {
-    render(<Card item={card} />);
+    render(<Card cardItem={card} />);
     expect(screen.getByText('Training Luke with Yoda')).toBeInTheDocument();
   });
 
   test('it displays a list of cards', async () => {
-    render(<Cards cards={cardsData} />);
+    render(<Cards />);
 
     const cardsList = await waitFor(() => screen.getByTestId('card-list'));
     expect(cardsList).toBeInTheDocument();

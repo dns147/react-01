@@ -3,7 +3,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 export default function SearchBar() {
   const valueFromLocalStorage = localStorage.getItem('inputValue') as string;
   const [valueInput, setValueInput] = useState(valueFromLocalStorage ?? '');
-  
+
   const handleSubmit = (event: FormEvent): void => {
     event.preventDefault();
     localStorage.setItem('inputValue', valueInput);
