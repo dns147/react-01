@@ -10,18 +10,18 @@ describe('test userCard component', () => {
     date: '2023-03-24',
     planet: 'Earth',
     access: ['control', 'cargo'],
-    typeCrew: ['civilian'],
+    typeCrew: 'civilian',
     category: 'Figure',
     urlFoto: 'https://i.ibb.co/SwWgMZT/luke1.jpg',
   };
 
   test('it renders', () => {
-    render(<UserCard userData={data} />);
+    render(<UserCard userCardItem={data} />);
     expect(screen.getByText('Rocky Slay')).toBeInTheDocument();
   });
 
   test('it displays card', async () => {
-    render(<UserCard userData={data} />);
+    render(<UserCard userCardItem={data} />);
 
     const card = await waitFor(() => screen.getByTestId('user-cards-item'));
     expect(card).toBeInTheDocument();

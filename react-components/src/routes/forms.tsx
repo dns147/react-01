@@ -217,7 +217,7 @@ export default function Forms() {
 
       <div className="user-cards">
         {users.map((user: IUserData, index: number) => (
-          <UserCard key={index} userData={user} />
+          <UserCard key={index} userCardItem={user} />
         ))}
       </div>
     </>

@@ -1,24 +1,23 @@
 import { render, screen } from '@testing-library/react';
 import { beforeEach, describe, expect, test } from 'vitest';
 import '@testing-library/jest-dom';
-import { getValueCheck, isCapital } from './utils';
+import { defaultCheckedInputs, isCapital } from './utils';
 import Forms from '../routes/forms';
 
 describe('test utils functions', () => {
   const smallLetter = 'w';
   const bigLetter = 'W';
-  const inputValue = 'Rocky';
   let input: HTMLInputElement[];
 
   beforeEach(() => {
     render(<Forms />);
     input = screen.getAllByLabelText('access-input');
     input[0].checked = true;
-    input[0].value = inputValue;
   });
 
-  test('check getValueCheck function - return value if input is checked', () => {
-    expect(getValueCheck(input[0])).toBe(inputValue);
+  test('check defaultCheckedInputs function - reset input if input is checked', () => {
+    defaultCheckedInputs([input[0]]);
+    expect(input[0].checked).toBe(false);
   });
 
   test('check isCapital function - return false if letter is small', () => {

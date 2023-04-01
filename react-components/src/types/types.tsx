@@ -22,3 +22,7 @@ export interface IUserData {
 export interface ICardProps {
   cardItem: ICards;
 }
+
+export interface IUserCardProps {
+  userCardItem: IUserData;
+}
