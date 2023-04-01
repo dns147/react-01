@@ -42,7 +42,7 @@ export default class UserCard extends Component<MyProps, MyState> {
           </b>
           <br />
           <b>
-            TypeOfCrew: <span className="access-item">{typeCrew[0]}</span>
+            TypeOfCrew: <span className="access-item">{typeCrew}</span>
           </b>
         </div>
       </>

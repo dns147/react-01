@@ -5,7 +5,6 @@ import Card from '../components/cards/card';
 import SearchBar from '../components/search-bar/search-bar';
 import '@testing-library/jest-dom';
 import Cards from '../components/cards/cards';
-import cardsData from '../assets/json/data.json';
 
 describe('test search bar component', () => {
   describe('test basic function', () => {

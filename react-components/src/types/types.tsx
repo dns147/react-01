@@ -10,13 +10,13 @@ export interface ICards {
 }
 
 export interface IUserData {
-  name: string | undefined;
-  surname: string | undefined;
-  date: string | undefined;
-  planet: string | undefined;
+  name: string;
+  surname: string;
+  date: string;
+  planet: string;
   access: string[];
-  typeCrew: string[];
-  urlFoto: string | ArrayBuffer | null;
+  typeCrew: string;
+  urlFoto: string;
 }
 
 export interface ICardProps {
