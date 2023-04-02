@@ -18,7 +18,7 @@ export default function SearchBar() {
   return (
     <>
       <form id="search-form" role="search" onSubmit={handleSubmit}>
-        <button type="submit"></button>
+        <button type="submit" data-testid="submit"></button>
         <input
           id="q"
           aria-label="Search field"

@@ -111,6 +111,7 @@ export default function Forms() {
             },
           })}
           placeholder="Surname"
+          data-testid="user-surname"
         />
         {errors?.surname && (
           <span className="error-message">
@@ -123,6 +124,7 @@ export default function Forms() {
           {...register('date', {
             required: 'No date selected.',
           })}
+          data-testid="user-date"
         />
         {errors?.date && (
           <span className="error-message">{errors.date?.message || 'No date selected.'}</span>
@@ -137,12 +139,21 @@ export default function Forms() {
               required: 'No destination selected.',
             })}
             defaultValue=""
+            data-testid="user-planet"
           >
-            <option value="default"></option>
-            <option value="mars">Mars</option>
-            <option value="jupiter">Jupiter</option>
-            <option value="saturn">Saturn</option>
-            <option value="neptune">Neptune</option>
+            <option data-testid="select-option" value="default"></option>
+            <option data-testid="select-option" value="mars">
+              Mars
+            </option>
+            <option data-testid="select-option" value="jupiter">
+              Jupiter
+            </option>
+            <option data-testid="select-option" value="saturn">
+              Saturn
+            </option>
+            <option data-testid="select-option" value="neptune">
+              Neptune
+            </option>
           </select>
         </label>
         {errors?.planet && (
@@ -163,6 +174,7 @@ export default function Forms() {
                 required: 'No access selected.',
               })}
               value="control"
+              data-testid="user-access"
             />
           </label>
           <label>
@@ -196,6 +208,7 @@ export default function Forms() {
                 required: 'No type crew selected.',
               })}
               value="military"
+              data-testid="user-typeCrew"
             />
             Military
           </label>
@@ -225,6 +238,7 @@ export default function Forms() {
               required: 'File not selected.',
             })}
             accept="image/*"
+            data-testid="user-file"
           />
         </label>
         {errors?.foto && (
