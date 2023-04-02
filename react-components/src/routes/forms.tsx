@@ -1,28 +1,27 @@
-import { FormEvent, ReactElement, useState } from 'react';
-import React from 'react';
-import InputName from '../components/forms/input-name';
+import { ReactElement, useEffect, useState } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import '../styles/forms.scss';
-import { IUserData } from '../types/types';
-import InputSurname from '../components/forms/input-surname';
-import InputDate from '../components/forms/input-date';
-import SelectPlanet from '../components/forms/select-planet';
-import CheckboxAccess from '../components/forms/checkbox-access';
-import RadioTypeCrew from '../components/forms/radio-typeofcrew';
-import InputFile from '../components/forms/input-file';
+import { IUserData, Inputs } from '../types/types';
 import UserCard from '../components/userCard/userCard';
-import { defaultCheckedInputs, isCapital } from '../utils/utils';
 
 export default function Forms() {
-  const [form, setForm] = useState({} as HTMLFormElement);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isValid },
+  } = useForm<Inputs>({
+    mode: 'onSubmit',
+  });
+
   const [users, setUsers] = useState([] as IUserData[]);
   const [isSaved, setIsSaved] = useState(false);
-  const [isErrorName, setIsErrorName] = useState(false);
-  const [isErrorSurname, setIsErrorSurname] = useState(false);
-  const [isErrorDate, setIsErrorDate] = useState(false);
-  const [isErrorDestination, setIsErrorDestination] = useState(false);
-  const [isErrorAccess, setIsErrorAccess] = useState(false);
-  const [isErrorTypeCrew, setIsErrorTypeCrew] = useState(false);
-  const [isErrorFile, setIsErrorFile] = useState(false);
+  const [data, setData] = useState('');
+  let confirmation: ReactElement;
+
+  useEffect(() => {
+    localStorage.setItem('formData', data);
+  });
 
   function loadFileAsync(file: File): Promise<unknown> {
     return new Promise((resolve, reject) => {
@@ -37,9 +36,8 @@ export default function Forms() {
 
   async function getUrlFile(file: File): Promise<void> {
     try {
-      const imageUrl = await loadFileAsync(file);
-      fillUserInfo(String(imageUrl));
-      clearForm();
+      const imageUrl = (await loadFileAsync(file)) as string;
+      fillUserInfo(imageUrl);
       setIsSaved(false);
     } catch (err) {
       console.log(err);
@@ -47,14 +45,14 @@ export default function Forms() {
   }
 
   function fillUserInfo(imageUrl: string): void {
-    const formData = new FormData(form);
+    const dataFromLocalStorage = JSON.parse(localStorage['formData']);
     const dataUser: IUserData = {
-      name: formData.get('name') as string,
-      surname: formData.get('surname') as string,
-      date: formData.get('date') as string,
-      planet: formData.get('planet') as string,
-      access: formData.getAll('access') as string[],
-      typeCrew: formData.get('typeCrew') as string,
+      name: dataFromLocalStorage['name'],
+      surname: dataFromLocalStorage['surname'],
+      date: dataFromLocalStorage['date'],
+      planet: dataFromLocalStorage['planet'],
+      access: dataFromLocalStorage['access'],
+      typeCrew: dataFromLocalStorage['typeCrew'],
       urlFoto: imageUrl,
     };
 
@@ -62,83 +60,17 @@ export default function Forms() {
     setUsers(dataUsers);
   }
 
-  function clearForm(): void {
-    const inputName = form['name'] as unknown;
-    const inputSurname = form['surname'] as unknown;
-    const inputDate = form['date'] as unknown;
-    const inputPlanet = form['planet'] as unknown;
-    const inputAccesses = form['access'] as HTMLInputElement[];
-    const InputTypeCrew = form['typeCrew'] as HTMLInputElement[];
-    const InputFile = form['foto'] as unknown;
+  const onSubmit: SubmitHandler<Inputs> = (form) => {
+    const data = JSON.stringify(form);
+    setData(data);
+    const userFile = form['foto'][0];
 
-    (inputName as HTMLInputElement).value = '';
-    (inputSurname as HTMLInputElement).value = '';
-    (inputDate as HTMLInputElement).value = '';
-    (inputPlanet as HTMLSelectElement).value = '';
-    defaultCheckedInputs(inputAccesses);
-    defaultCheckedInputs(InputTypeCrew);
-    (InputFile as HTMLInputElement).value = '';
-  }
-
-  function settingState(
-    value: boolean,
-    nameUseState: React.Dispatch<React.SetStateAction<boolean>>
-  ): void {
-    if (value) {
-      nameUseState(true);
-    } else {
-      nameUseState(false);
-    }
-  }
-
-  const handleSubmit = (event: FormEvent): void => {
-    event.preventDefault();
-
-    const form = event.target as HTMLFormElement;
-    setForm(form);
-    const formData = new FormData(form);
-
-    const userName = formData.get('name') as string;
-    const userSurname = formData.get('surname') as string;
-    const uyserDate = formData.get('date') as string;
-    const userPlanet = formData.get('planet') as string;
-    const userAccesses = formData.getAll('access') as string[];
-    const userTypeCrew = formData.get('typeCrew') as string;
-    const userFile = formData.get('foto') as File;
-
-    const isLetterNameCapital = isCapital(userName[0]);
-    const isLetterSurnameCapital = isCapital(userSurname[0]);
-
-    settingState(!isLetterNameCapital, setIsErrorName);
-    settingState(!isLetterSurnameCapital, setIsErrorSurname);
-    settingState(!uyserDate, setIsErrorDate);
-    settingState(userPlanet === 'default', setIsErrorDestination);
-    settingState(userAccesses.length === 0, setIsErrorAccess);
-    settingState(!userTypeCrew, setIsErrorTypeCrew);
-    settingState(!userFile.name, setIsErrorFile);
-
-    if (
-      isLetterNameCapital &&
-      isLetterSurnameCapital &&
-      uyserDate &&
-      userPlanet !== 'default' &&
-      userAccesses.length !== 0 &&
-      userTypeCrew &&
-      userFile.name
-    ) {
+    if (isValid) {
       setIsSaved(true);
       getUrlFile(userFile);
+      reset();
     }
   };
-
-  let confirmation: ReactElement;
-  let errorName: ReactElement | undefined;
-  let errorSurname: ReactElement | undefined;
-  let errorDate: ReactElement | undefined;
-  let errorDestination: ReactElement | undefined;
-  let errorAccess: ReactElement | undefined;
-  let errorTypeCrew: ReactElement | undefined;
-  let errorFile: ReactElement | undefined;
 
   if (isSaved) {
     confirmation = <h2 className="confirmation-message">Data Successfully Saved</h2>;
@@ -146,69 +78,159 @@ export default function Forms() {
     confirmation = <h2 className="confirmation-message">User Info</h2>;
   }
 
-  if (isErrorName) {
-    errorName = <span className="error-message">name must start with a capital letter</span>;
-  } else {
-    errorName = <span className="error-message"></span>;
-  }
-
-  if (isErrorSurname) {
-    errorSurname = <span className="error-message">surname must start with a capital letter</span>;
-  } else {
-    errorSurname = <span className="error-message"></span>;
-  }
-
-  if (isErrorDate) {
-    errorDate = <span className="error-message">no date selected</span>;
-  } else {
-    errorDate = <span className="error-message"></span>;
-  }
-
-  if (isErrorDestination) {
-    errorDestination = <span className="error-message">no destination selected</span>;
-  } else {
-    errorDestination = <span className="error-message"></span>;
-  }
-
-  if (isErrorAccess) {
-    errorAccess = <span className="error-message">no access selected</span>;
-  } else {
-    errorAccess = <span className="error-message"></span>;
-  }
-
-  if (isErrorTypeCrew) {
-    errorTypeCrew = <span className="error-message">no type of crew selected</span>;
-  } else {
-    errorTypeCrew = <span className="error-message"></span>;
-  }
-
-  if (isErrorFile) {
-    errorFile = <span className="error-message">file not selected</span>;
-  } else {
-    errorFile = <span className="error-message"></span>;
-  }
-
   return (
     <>
-      <form id="data-form" data-testid="data-form" onSubmit={handleSubmit}>
-        <InputName />
-        {errorName}
-        <InputSurname />
-        {errorSurname}
-        <InputDate />
-        {errorDate}
+      <form id="data-form" data-testid="data-form" onSubmit={handleSubmit(onSubmit)}>
+        <input
+          type="text"
+          {...register('name', {
+            validate: (value) => !/^[^A-ZА-ЯЁ]+/.test(value),
+            required: 'Name must start with a capital letter.',
+            minLength: {
+              value: 4,
+              message: 'Name must start with a capital letter and min length must be 4.',
+            },
+          })}
+          placeholder="Name"
+          data-testid="user-name"
+        />
+        {errors?.name && (
+          <span className="error-message">
+            {errors.name?.message || 'Name must start with a capital letter.'}
+          </span>
+        )}
+
+        <input
+          type="text"
+          {...register('surname', {
+            validate: (value) => !/^[^A-ZА-ЯЁ]+/.test(value),
+            required: 'Surname must start with a capital letter.',
+            minLength: {
+              value: 4,
+              message: 'Surname must start with a capital letter and min length must be 4.',
+            },
+          })}
+          placeholder="Surname"
+        />
+        {errors?.surname && (
+          <span className="error-message">
+            {errors.surname?.message || 'Surname must start with a capital letter.'}
+          </span>
+        )}
+
+        <input
+          type="date"
+          {...register('date', {
+            required: 'No date selected.',
+          })}
+        />
+        {errors?.date && (
+          <span className="error-message">{errors.date?.message || 'No date selected.'}</span>
+        )}
+
         <hr />
-        <SelectPlanet />
-        {errorDestination}
+        <label id="select-planet">
+          <b>Destination:</b>
+          <select
+            {...register('planet', {
+              validate: (value) => !(value === 'default'),
+              required: 'No destination selected.',
+            })}
+            defaultValue=""
+          >
+            <option value="default"></option>
+            <option value="mars">Mars</option>
+            <option value="jupiter">Jupiter</option>
+            <option value="saturn">Saturn</option>
+            <option value="neptune">Neptune</option>
+          </select>
+        </label>
+        {errors?.planet && (
+          <span className="error-message">
+            {errors.planet?.message || 'No destination selected.'}
+          </span>
+        )}
+
         <hr />
-        <CheckboxAccess />
-        {errorAccess}
+        <div className="checkbox-access">
+          <b>Get access:</b>
+          <label>
+            Control module:
+            <input
+              type="checkbox"
+              aria-label="access-input"
+              {...register('access', {
+                required: 'No access selected.',
+              })}
+              value="control"
+            />
+          </label>
+          <label>
+            Cargo module:
+            <input type="checkbox" {...register('access')} value="cargo" />
+          </label>
+          <label>
+            Engine module:
+            <input type="checkbox" {...register('access')} value="engine" />
+          </label>
+          <label>
+            Crew module:
+            <input type="checkbox" {...register('access')} value="crew" />
+          </label>
+          <label>
+            Medical module:
+            <input type="checkbox" {...register('access')} value="medical" />
+          </label>
+        </div>
+        {errors?.access && (
+          <span className="error-message">{errors.access?.message || 'No access selected.'}</span>
+        )}
+
         <hr />
-        <RadioTypeCrew />
-        {errorTypeCrew}
+        <div className="radio-typeofcrew">
+          <b>Type of crew: </b>
+          <label>
+            <input
+              type="radio"
+              {...register('typeCrew', {
+                required: 'No type crew selected.',
+              })}
+              value="military"
+            />
+            Military
+          </label>
+          <label>
+            <input
+              type="radio"
+              {...register('typeCrew', {
+                required: 'No type crew selected.',
+              })}
+              value="civilian"
+            />
+            Civilian
+          </label>
+        </div>
+        {errors?.typeCrew && (
+          <span className="error-message">
+            {errors.typeCrew?.message || 'No type crew selected.'}
+          </span>
+        )}
+
         <hr />
-        <InputFile />
-        {errorFile}
+        <label>
+          <b>Upload your foto: </b>
+          <input
+            type="file"
+            {...register('foto', {
+              required: 'File not selected.',
+            })}
+            accept="image/*"
+          />
+        </label>
+        {errors?.foto && (
+          <span className="error-message">{errors.foto?.message || 'File not selected.'}</span>
+        )}
+
         <hr />
         <button type="submit">Send</button>
       </form>

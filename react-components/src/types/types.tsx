@@ -16,7 +16,7 @@ export interface IUserData {
   planet: string;
   access: string[];
   typeCrew: string;
-  urlFoto: string;
+  urlFoto?: string;
 }
 
 export interface ICardProps {
@@ -26,3 +26,13 @@ export interface ICardProps {
 export interface IUserCardProps {
   userCardItem: IUserData;
 }
+
+export type Inputs = {
+  name: string;
+  surname: string;
+  date: string;
+  planet: string;
+  access: string[];
+  typeCrew: string;
+  foto: FileList;
+};
