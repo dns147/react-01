@@ -22,14 +22,13 @@ describe('test search bar component', () => {
     expect(input[0].tagName).toBe('INPUT');
   });
 
-  test('user change data - value save in local storage', async () => {
+  test('user change data - value not save in local storage', async () => {
     await userEvent.type(input[0], '3');
-    expect(localStorage.getItem('inputValue')).toBe('183');
+    expect(localStorage.getItem('inputValue')).toBe('');
   });
 
   test('after submit - value save in local storage', async () => {
     await userEvent.click(screen.getByTestId('submit'));
-    await userEvent.type(input[0], '4');
-    expect(localStorage.getItem('inputValue')).toBe('184');
+    expect(localStorage.getItem('inputValue')).toBe('183');
   });
 });

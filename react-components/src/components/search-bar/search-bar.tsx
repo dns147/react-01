@@ -1,8 +1,16 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
 
 export default function SearchBar() {
   const valueFromLocalStorage = localStorage.getItem('inputValue') as string;
-  const [valueInput, setValueInput] = useState(valueFromLocalStorage ?? '');
+  const [valueInput, setValueInput] = useState('');
+  const valueInputRef = useRef(valueFromLocalStorage ?? '');
+
+  useEffect(() => {
+    setValueInput(valueInputRef.current);
+    return () => {
+      localStorage.setItem('inputValue', valueInputRef.current);
+    };
+  }, []);
 
   const handleSubmit = (event: FormEvent): void => {
     event.preventDefault();
@@ -12,7 +20,7 @@ export default function SearchBar() {
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const currentValue: string = event.target.value;
     setValueInput(currentValue);
-    localStorage.setItem('inputValue', currentValue);
+    valueInputRef.current = currentValue;
   };
 
   return (
