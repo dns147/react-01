@@ -1,17 +1,11 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 export default function Header() {
-  const [currentLocation, setCurrentLocation] = useState('home');
-
-  const handleClick = (): void => {
-    const currentPathname: string = window.location.pathname.slice(1);
-    setCurrentLocation(currentPathname);
-  };
+  const currentPathname: string = useLocation().pathname.slice(1);
 
   return (
     <>
-      <nav id="nav-menu" onClick={handleClick}>
+      <nav id="nav-menu">
         <NavLink className={'nav-home-page'} to="/home">
           Home
         </NavLink>
@@ -21,7 +15,7 @@ export default function Header() {
         <NavLink className={'nav-about-page'} to="/about">
           About Us
         </NavLink>
-        <b className={'current-page'}>{currentLocation + ' page'}</b>
+        <b className={'current-page'}>{currentPathname + ' page'}</b>
       </nav>
     </>
   );

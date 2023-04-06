@@ -1,5 +1,8 @@
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
 
+const API_URL =
+  'https://api.themoviedb.org/3/movie/popular?api_key=e186f8253c4dd6e459f37348242bb754';
+
 export default function SearchBar() {
   const valueFromLocalStorage = localStorage.getItem('inputValue') as string;
   const [valueInput, setValueInput] = useState('');
@@ -10,6 +13,14 @@ export default function SearchBar() {
     return () => {
       localStorage.setItem('inputValue', valueInputRef.current);
     };
+  }, []);
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   }, []);
 
   const handleSubmit = (event: FormEvent): void => {

@@ -27,6 +27,10 @@ export interface IUserCardProps {
   userCardItem: IUserData;
 }
 
+export interface ICardArrayProps {
+  cardsItem: ICards[];
+}
+
 export type Inputs = {
   name: string;
   surname: string;
