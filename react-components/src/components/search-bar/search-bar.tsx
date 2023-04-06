@@ -1,11 +1,15 @@
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
+import { IMoviesProps } from '../../types/types';
 
 const API_URL =
   'https://api.themoviedb.org/3/movie/popular?api_key=e186f8253c4dd6e459f37348242bb754';
+const API_SEARCH =
+  'https://api.themoviedb.org/3/search/movie?api_key=e186f8253c4dd6e459f37348242bb754&query';
 
-export default function SearchBar() {
+export default function SearchBar(props: IMoviesProps) {
   const valueFromLocalStorage = localStorage.getItem('inputValue') as string;
   const [valueInput, setValueInput] = useState('');
+  const [movies, setMovies] = useState([]);
   const valueInputRef = useRef(valueFromLocalStorage ?? '');
 
   useEffect(() => {
@@ -19,13 +23,23 @@ export default function SearchBar() {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        setMovies(data.results);
       });
   }, []);
 
-  const handleSubmit = (event: FormEvent): void => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    localStorage.setItem('inputValue', valueInput);
+
+    try {
+      const url = `${API_SEARCH}=${valueInput}`;
+      const res = await fetch(url);
+      const data = await res.json();
+
+      setMovies(data.results);
+      props.updateMovies(movies);
+    } catch (event) {
+      console.log(event);
+    }
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
@@ -39,11 +53,9 @@ export default function SearchBar() {
       <form id="search-form" role="search" onSubmit={handleSubmit}>
         <button type="submit" data-testid="submit"></button>
         <input
-          id="q"
           aria-label="Search field"
-          placeholder="Search"
+          placeholder="Search Movies"
           type="search"
-          name="q"
           value={valueInput}
           onChange={handleChange}
         />
