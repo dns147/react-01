@@ -36,7 +36,6 @@ describe('test form component', () => {
   });
 
   test('checking the saving of data from the form', async () => {
-    // const { getByText, getByLabelText } = render(<Forms />);
     render(<Forms />);
 
     inputName = screen.getByTestId('user-name');

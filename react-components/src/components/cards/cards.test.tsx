@@ -3,29 +3,43 @@ import { describe, expect, test } from 'vitest';
 import Card from './card';
 import '@testing-library/jest-dom';
 import Cards from './cards';
+import { IMovie } from '../../types/types';
+import userEvent from '@testing-library/user-event';
 
 describe('test cards component', () => {
   const card = {
     id: 1,
-    title: 'Training Luke with Yoda',
-    description:
-      'Celebrate the most stellar fandom of them all with the Empire Strikes Back Pop! of Luke carrying Master Yoda on his back. Collectible stands 3.75-inches tall.',
-    price: 15,
-    stock: 44,
-    brand: 'Funko Pop!',
-    category: 'Figure',
-    images: 'https://i.ibb.co/SwWgMZT/luke1.jpg',
+    title: 'Rocky',
+    release_date: '1976-11-10',
+    poster_path: '/hEjK9A9BkNXejFW4tfacVAEHtkn.jpg',
+    adult: false,
+    overview: '',
+    original_title: '',
+    original_language: '',
+    popularity: 0,
+    vote_count: 0,
+    video: false,
+    vote_average: 0,
+    genre_ids: [],
+    backdrop_path: '',
   };
+
+  const data: IMovie[] = [];
 
   test('it renders', () => {
     render(<Card cardItem={card} />);
-    expect(screen.getByText('Training Luke with Yoda')).toBeInTheDocument();
+    expect(screen.getByText('Rocky (1976)')).toBeInTheDocument();
   });
 
   test('it displays a list of cards', async () => {
-    render(<Cards />);
-
+    render(<Cards cardsMovies={data} />);
     const cardsList = await waitFor(() => screen.getByTestId('card-list'));
     expect(cardsList).toBeInTheDocument();
+  });
+
+  test('open modal window', async () => {
+    render(<Card cardItem={card} />);
+    await userEvent.click(screen.getByTestId('card-item'));
+    expect(screen.getByTestId('modal-window')).toBeInTheDocument();
   });
 });

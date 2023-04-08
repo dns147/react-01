@@ -8,8 +8,10 @@ describe('test search bar component', () => {
   const inputValue = '18';
   let input: HTMLInputElement[];
 
+  const updateData = (): void => {};
+
   beforeEach(() => {
-    render(<SearchBar />);
+    render(<SearchBar updateMovies={updateData} />);
     input = screen.getAllByLabelText('Search field');
     input[0].value = inputValue;
   });
