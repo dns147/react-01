@@ -8,6 +8,7 @@ export default function SearchBar(props: IMoviesProps) {
   const valueFromLocalStorage = localStorage.getItem('inputValue') as string;
   const [valueInput, setValueInput] = useState('');
   const [movies, setMovies] = useState([]);
+  const [vision, setVision] = useState(false);
   const valueInputRef = useRef(valueFromLocalStorage ?? '');
 
   useEffect(() => {
@@ -18,44 +19,19 @@ export default function SearchBar(props: IMoviesProps) {
   }, []);
 
   useEffect(() => {
-    props.updateMovies(movies);
+    props.updateMovies(movies, vision);
   });
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
+    setVision(true);
 
     try {
       const url = `${API_SEARCH}=${valueInput}`;
       const response = await fetch(url);
-      const reader = response.body?.getReader() as ReadableStreamDefaultReader<Uint8Array>;
-      const contentLength = Number(response.headers.get('Content-Length'));
-      let receivedLength = 0;
-      const chunks = [];
-
-      while (true) {
-        const { done, value } = await reader.read();
-
-        if (done) {
-          break;
-        }
-
-        chunks.push(value);
-        receivedLength += value.length;
-
-        console.log(`Получено ${receivedLength} из ${contentLength}`);
-      }
-
-      const chunksAll = new Uint8Array(receivedLength);
-      let position = 0;
-
-      for (const chunk of chunks) {
-        chunksAll.set(chunk, position);
-        position += chunk.length;
-      }
-
-      const result = new TextDecoder('utf-8').decode(chunksAll);
-      const commits = JSON.parse(result);
-      setMovies(commits.results);
+      const data = await response.json();
+      setMovies(data.results);
+      setVision(false);
     } catch (event) {
       console.log(event);
     }

@@ -49,11 +49,15 @@ export interface ICardArrayProps {
 }
 
 export interface IMoviesProps {
-  updateMovies: (value: IMovie[]) => void;
+  updateMovies: (value: IMovie[], spinnerVisibility: boolean) => void;
 }
 
 export interface ICardMoviesProps {
   cardsMovies: IMovie[];
+}
+
+export interface IProgressBarProps {
+  spinnerVisibility: boolean;
 }
 
 export type Inputs = {

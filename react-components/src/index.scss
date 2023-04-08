@@ -50,10 +50,14 @@ h1 {
   }
 }
 
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
 #search-form {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
 
   input {
     box-sizing: border-box;
