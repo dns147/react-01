@@ -100,11 +100,14 @@ h1 {
     background: #000000;
     padding: 10px;
     box-shadow: white 0px 0px 6px 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    img {
-      float: left;
-      margin: 6px 10px 10px 0;
-    }
+  .item:hover {
+    cursor: pointer;
+    box-shadow: lightgreen 0px 0px 6px 3px;
   }
 }
 

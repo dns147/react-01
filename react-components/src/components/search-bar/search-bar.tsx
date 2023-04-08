@@ -1,8 +1,6 @@
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
 import { IMoviesProps } from '../../types/types';
 
-const API_URL =
-  'https://api.themoviedb.org/3/movie/popular?api_key=e186f8253c4dd6e459f37348242bb754';
 const API_SEARCH =
   'https://api.themoviedb.org/3/search/movie?api_key=e186f8253c4dd6e459f37348242bb754&query';
 
@@ -20,23 +18,44 @@ export default function SearchBar(props: IMoviesProps) {
   }, []);
 
   useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((data) => {
-        setMovies(data.results);
-      });
-  }, []);
+    props.updateMovies(movies);
+  });
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
 
     try {
       const url = `${API_SEARCH}=${valueInput}`;
-      const res = await fetch(url);
-      const data = await res.json();
+      const response = await fetch(url);
+      const reader = response.body?.getReader() as ReadableStreamDefaultReader<Uint8Array>;
+      const contentLength = Number(response.headers.get('Content-Length'));
+      let receivedLength = 0;
+      const chunks = [];
 
-      setMovies(data.results);
-      props.updateMovies(movies);
+      while (true) {
+        const { done, value } = await reader.read();
+
+        if (done) {
+          break;
+        }
+
+        chunks.push(value);
+        receivedLength += value.length;
+
+        console.log(`Получено ${receivedLength} из ${contentLength}`);
+      }
+
+      const chunksAll = new Uint8Array(receivedLength);
+      let position = 0;
+
+      for (const chunk of chunks) {
+        chunksAll.set(chunk, position);
+        position += chunk.length;
+      }
+
+      const result = new TextDecoder('utf-8').decode(chunksAll);
+      const commits = JSON.parse(result);
+      setMovies(commits.results);
     } catch (event) {
       console.log(event);
     }

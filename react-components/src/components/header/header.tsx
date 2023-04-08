@@ -2,6 +2,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 export default function Header() {
   const currentPathname: string = useLocation().pathname.slice(1);
+  const namePage: string = currentPathname === 'home' ? 'The Movie Database' : currentPathname;
 
   return (
     <>
@@ -15,7 +16,7 @@ export default function Header() {
         <NavLink className={'nav-about-page'} to="/about">
           About Us
         </NavLink>
-        <b className={'current-page'}>{currentPathname + ' page'}</b>
+        <b className={'current-page'}>{namePage}</b>
       </nav>
     </>
   );

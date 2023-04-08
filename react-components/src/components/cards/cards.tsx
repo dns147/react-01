@@ -1,5 +1,4 @@
-import { ICardMoviesProps, ICards } from '../../types/types';
-import cardsData from '../../assets/json/data.json';
+import { ICardMoviesProps, IMovie } from '../../types/types';
 import Card from './card';
 
 export default function Cards(props: ICardMoviesProps) {
@@ -7,7 +6,7 @@ export default function Cards(props: ICardMoviesProps) {
   return (
     <>
       <div className="cards" data-testid="card-list">
-        {cardsData.map((card: ICards) => (
+        {props.cardsMovies.map((card: IMovie) => (
           <Card key={card.id} cardItem={card} />
         ))}
       </div>

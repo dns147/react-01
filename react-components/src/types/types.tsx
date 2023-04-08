@@ -37,7 +37,7 @@ export interface IUserData {
 }
 
 export interface ICardProps {
-  cardItem: ICards;
+  cardItem: IMovie;
 }
 
 export interface IUserCardProps {
