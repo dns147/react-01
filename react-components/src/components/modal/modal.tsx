@@ -28,20 +28,20 @@ export default function Modal(props: IModalProps) {
   const [dataMovie, setDataMovie] = useState<IMovieCard>(dataCard);
   const closeModal = () => setOpen(false);
 
-  const getMovie = async () => {
-    try {
-      const url = `https://api.themoviedb.org/3/movie/${idMovie}?api_key=e186f8253c4dd6e459f37348242bb754`;
-      const response = await fetch(url);
-      const data = await response.json();
-      setDataMovie(data);
-    } catch (event) {
-      console.log(event);
-    }
-  };
-
   useEffect(() => {
+    const getMovie = async () => {
+      try {
+        const url = `https://api.themoviedb.org/3/movie/${idMovie}?api_key=e186f8253c4dd6e459f37348242bb754`;
+        const response = await fetch(url);
+        const data = await response.json();
+        setDataMovie(data);
+      } catch (event) {
+        console.log(event);
+      }
+    };
+
     getMovie();
-  });
+  }, [idMovie]);
 
   return (
     <div className="overlay fixed-overlay" data-testid="close-overlay" onClick={closeModal}>
