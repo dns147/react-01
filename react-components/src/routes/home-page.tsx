@@ -6,21 +6,24 @@ import ProgressBar from '../components/progress-bar/progress-bar';
 
 export default function HomePage() {
   const [data, setData] = useState<IMovie[]>([]);
-  const [vision, setVision] = useState(false);
+  const [visionLoader, setVisionLoader] = useState(false);
 
-  const updateData = (value: IMovie[], spinnerVisibility: boolean): void => {
+  const updateData = (value: IMovie[]): void => {
     setData(value);
-    setVision(spinnerVisibility);
+  };
+
+  const updateStateLoader = (state: boolean): void => {
+    setVisionLoader(state);
   };
 
   return (
     <>
       <div className="search-container">
         <SearchBar updateMovies={updateData} />
-        <ProgressBar spinnerVisibility={vision} />
+        <ProgressBar spinnerVisibility={visionLoader} />
       </div>
 
-      <Cards cardsMovies={data} />
+      <Cards cardsMovies={data} updateLoader={updateStateLoader} />
     </>
   );
 }

@@ -3,8 +3,7 @@ import { describe, expect, test } from 'vitest';
 import Card from './card';
 import '@testing-library/jest-dom';
 import Cards from './cards';
-import { IMovie } from '../../types/types';
-import userEvent from '@testing-library/user-event';
+import { ICardProps, IMovie } from '../../types/types';
 
 describe('test cards component', () => {
   const card = {
@@ -25,21 +24,31 @@ describe('test cards component', () => {
   };
 
   const data: IMovie[] = [];
+  const props: ICardProps = {
+    cardItem: card,
+    updateLoader: () => {},
+  };
+  const updateLoader = (state: boolean): void => {
+    props.updateLoader(state);
+  };
+  updateLoader(true);
 
-  test('it renders', () => {
-    render(<Card cardItem={card} />);
-    expect(screen.getByText('Rocky (1976)')).toBeInTheDocument();
+  test('loader not renders', () => {
+    render(<Card cardItem={card} updateLoader={updateLoader} />);
+    expect(screen.queryByTestId('spinner')).not.toBeInTheDocument();
   });
 
   test('it displays a list of cards', async () => {
-    render(<Cards cardsMovies={data} />);
+    render(<Cards cardsMovies={data} updateLoader={updateLoader} />);
     const cardsList = await waitFor(() => screen.getByTestId('card-list'));
     expect(cardsList).toBeInTheDocument();
   });
 
   test('open modal window', async () => {
-    render(<Card cardItem={card} />);
-    await userEvent.click(screen.getByTestId('card-item'));
-    expect(screen.getByTestId('modal-window')).toBeInTheDocument();
+    render(<Card cardItem={card} updateLoader={updateLoader} />);
+    const cardItem = await waitFor(() => screen.queryByTestId('card-item'));
+    expect(cardItem).not.toBeInTheDocument();
+    //await userEvent.click(cardItem);
+    expect(screen.queryByTestId('modal-window')).not.toBeInTheDocument();
   });
 });

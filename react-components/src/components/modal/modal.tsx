@@ -4,6 +4,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import './modal.scss';
 import { MouseEvent, useEffect, useState } from 'react';
 import ProgressBar from '../progress-bar/progress-bar';
+import { fetchMovie } from '../../utils/api.service';
 
 export default function Modal(props: IModalProps) {
   const API_IMG = 'https://image.tmdb.org/t/p/w300';
@@ -38,13 +39,11 @@ export default function Modal(props: IModalProps) {
   useEffect(() => {
     const getMovie = async () => {
       try {
-        const url = `https://api.themoviedb.org/3/movie/${idMovie}?api_key=e186f8253c4dd6e459f37348242bb754`;
-        const response = await fetch(url);
-        const data = await response.json();
-        setDataMovie(data);
+        const dataPromise = await fetchMovie(idMovie);
+        setDataMovie(dataPromise);
         setVision(false);
-      } catch (event) {
-        console.log(event);
+      } catch (err) {
+        console.log(err);
       }
     };
 

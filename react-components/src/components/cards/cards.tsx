@@ -6,7 +6,7 @@ export default function Cards(props: ICardMoviesProps) {
     <>
       <div className="cards" data-testid="card-list">
         {props.cardsMovies.map((card: IMovie) => (
-          <Card key={card.id} cardItem={card} />
+          <Card key={card.id} cardItem={card} updateLoader={props.updateLoader} />
         ))}
       </div>
     </>

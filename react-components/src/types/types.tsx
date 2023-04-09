@@ -33,17 +33,6 @@ export interface IMovieCard {
   budget: number;
 }
 
-export interface ICards {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  stock: number;
-  brand: string;
-  category: string;
-  images: string;
-}
-
 export interface IUserData {
   name: string;
   surname: string;
@@ -56,22 +45,20 @@ export interface IUserData {
 
 export interface ICardProps {
   cardItem: IMovie;
+  updateLoader: (state: boolean) => void;
 }
 
 export interface IUserCardProps {
   userCardItem: IUserData;
 }
 
-export interface ICardArrayProps {
-  cardsItem: ICards[];
-}
-
 export interface IMoviesProps {
-  updateMovies: (value: IMovie[], spinnerVisibility: boolean) => void;
+  updateMovies: (value: IMovie[]) => void;
 }
 
 export interface ICardMoviesProps {
   cardsMovies: IMovie[];
+  updateLoader: (state: boolean) => void;
 }
 
 export interface IProgressBarProps {

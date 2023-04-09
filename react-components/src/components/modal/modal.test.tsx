@@ -6,12 +6,11 @@ import Modal from './modal';
 
 describe('test modal component', () => {
   const id = 1;
-  const open = true;
   const setOpen = () => {};
 
   test('close modal window', async () => {
     expect(screen.queryByTestId('modal-window')).not.toBeInTheDocument();
-    render(<Modal open={open} setOpen={setOpen} idMovie={id} />);
+    render(<Modal setOpen={setOpen} idMovie={id} />);
     expect(screen.getByTestId('modal-window')).toBeInTheDocument();
 
     await userEvent.click(screen.getByTestId('close-overlay'));
