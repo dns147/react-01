@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1681031727943" clover="3.2.0">
-  <project timestamp="1681031727943" name="All files">
-    <metrics statements="533" coveredstatements="492" conditionals="55" coveredconditionals="41" methods="26" coveredmethods="21" elements="614" coveredelements="554" complexity="0" loc="533" ncloc="533" packages="7" files="8" classes="8"/>
+<coverage generated="1681034235458" clover="3.2.0">
+  <project timestamp="1681034235459" name="All files">
+    <metrics statements="533" coveredstatements="492" conditionals="55" coveredconditionals="43" methods="26" coveredmethods="21" elements="614" coveredelements="556" complexity="0" loc="533" ncloc="533" packages="7" files="8" classes="8"/>
     <package name="components.cards">
       <metrics statements="56" coveredstatements="46" conditionals="5" coveredconditionals="3" methods="4" coveredmethods="2"/>
       <file name="card.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\components\cards\card.tsx">
@@ -563,21 +563,21 @@
       </file>
     </package>
     <package name="utils">
-      <metrics statements="12" coveredstatements="12" conditionals="6" coveredconditionals="4" methods="4" coveredmethods="4"/>
+      <metrics statements="12" coveredstatements="12" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
       <file name="api.service.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\utils\api.service.tsx">
-        <metrics statements="12" coveredstatements="12" conditionals="6" coveredconditionals="4" methods="4" coveredmethods="4"/>
+        <metrics statements="12" coveredstatements="12" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="2" type="cond" truecount="1" falsecount="0"/>
       </file>
     </package>
   </project>
