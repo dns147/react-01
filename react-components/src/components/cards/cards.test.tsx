@@ -23,7 +23,8 @@ describe('test cards component', () => {
     backdrop_path: '',
   };
 
-  const data: IMovie[] = [];
+  const dataFull: IMovie[] = [card];
+  const dataEmpty: IMovie[] = [];
   const props: ICardProps = {
     cardItem: card,
     updateLoader: () => {},
@@ -38,8 +39,13 @@ describe('test cards component', () => {
     expect(screen.queryByTestId('spinner')).not.toBeInTheDocument();
   });
 
+  test('it displays "No Movies Found!" if not movies', async () => {
+    render(<Cards cardsMovies={dataEmpty} updateLoader={updateLoader} />);
+    expect(screen.getByText('No Movies Found!')).toBeInTheDocument();
+  });
+
   test('it displays a list of cards', async () => {
-    render(<Cards cardsMovies={data} updateLoader={updateLoader} />);
+    render(<Cards cardsMovies={dataFull} updateLoader={updateLoader} />);
     const cardsList = await waitFor(() => screen.getByTestId('card-list'));
     expect(cardsList).toBeInTheDocument();
   });
