@@ -37,9 +37,10 @@ describe('test cards component', () => {
   test('loader not renders', () => {
     render(<Card cardItem={card} updateLoader={updateLoader} />);
     expect(screen.queryByTestId('spinner')).not.toBeInTheDocument();
+    expect(screen.queryByText('No Movies Found!')).not.toBeInTheDocument();
   });
 
-  test('it displays "No Movies Found!" if not movies', async () => {
+  test('it displays "No Movies Found!" if not found movies', async () => {
     render(<Cards cardsMovies={dataEmpty} updateLoader={updateLoader} />);
     expect(screen.getByText('No Movies Found!')).toBeInTheDocument();
   });

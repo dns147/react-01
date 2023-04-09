@@ -6,6 +6,7 @@ export default function SearchBar(props: IMoviesProps) {
   const valueFromLocalStorage = localStorage.getItem('inputValue') as string;
   const [valueInput, setValueInput] = useState('');
   const [movies, setMovies] = useState([]);
+  const [isConnectToAPI, setIsConnectToAPI] = useState(true);
   const valueInputRef = useRef(valueFromLocalStorage ?? '');
 
   useEffect(() => {
@@ -26,6 +27,7 @@ export default function SearchBar(props: IMoviesProps) {
       const dataPromise = await fetchMovieList(valueInput);
       setMovies(dataPromise.results);
     } catch (err) {
+      setIsConnectToAPI(false);
       console.log(err);
     }
   };
@@ -48,6 +50,7 @@ export default function SearchBar(props: IMoviesProps) {
           onChange={handleChange}
         />
       </form>
+      {!isConnectToAPI && <h2 className="message-failed">Connect to API Failed!</h2>}
     </>
   );
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1681036307497" clover="3.2.0">
-  <project timestamp="1681036307497" name="All files">
-    <metrics statements="537" coveredstatements="497" conditionals="58" coveredconditionals="46" methods="26" coveredmethods="21" elements="621" coveredelements="564" complexity="0" loc="537" ncloc="537" packages="7" files="8" classes="8"/>
+<coverage generated="1681040467397" clover="3.2.0">
+  <project timestamp="1681040467397" name="All files">
+    <metrics statements="540" coveredstatements="499" conditionals="59" coveredconditionals="46" methods="26" coveredmethods="21" elements="625" coveredelements="566" complexity="0" loc="540" ncloc="540" packages="7" files="8" classes="8"/>
     <package name="components.cards">
       <metrics statements="60" coveredstatements="51" conditionals="8" coveredconditionals="6" methods="4" coveredmethods="2"/>
       <file name="card.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\components\cards\card.tsx">
@@ -200,9 +200,9 @@
       </file>
     </package>
     <package name="components.search-bar">
-      <metrics statements="53" coveredstatements="49" conditionals="8" coveredconditionals="7" methods="3" coveredmethods="3"/>
+      <metrics statements="56" coveredstatements="51" conditionals="9" coveredconditionals="7" methods="3" coveredmethods="3"/>
       <file name="search-bar.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\components\search-bar\search-bar.tsx">
-        <metrics statements="53" coveredstatements="49" conditionals="8" coveredconditionals="7" methods="3" coveredmethods="3"/>
+        <metrics statements="56" coveredstatements="51" conditionals="9" coveredconditionals="7" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -211,37 +211,37 @@
         <line num="6" count="7" type="stmt"/>
         <line num="7" count="7" type="stmt"/>
         <line num="8" count="7" type="stmt"/>
-        <line num="9" count="7" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="7" type="stmt"/>
-        <line num="11" count="7" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="13" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="4" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="15" count="4" type="stmt"/>
-        <line num="16" count="7" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
         <line num="17" count="7" type="stmt"/>
-        <line num="18" count="7" type="cond" truecount="1" falsecount="0"/>
-        <line num="19" count="6" type="stmt"/>
-        <line num="20" count="7" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
+        <line num="19" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="6" type="stmt"/>
         <line num="21" count="7" type="stmt"/>
-        <line num="22" count="7" type="cond" truecount="1" falsecount="0"/>
-        <line num="23" count="1" type="stmt"/>
+        <line num="22" count="7" type="stmt"/>
+        <line num="23" count="7" type="cond" truecount="1" falsecount="0"/>
         <line num="24" count="1" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="27" count="0" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="1" type="cond" truecount="0" falsecount="1"/>
         <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="7" type="stmt"/>
-        <line num="33" count="7" type="cond" truecount="1" falsecount="0"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="7" type="stmt"/>
+        <line num="35" count="7" type="cond" truecount="1" falsecount="0"/>
         <line num="36" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
-        <line num="38" count="7" type="stmt"/>
-        <line num="39" count="7" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
         <line num="40" count="7" type="stmt"/>
         <line num="41" count="7" type="stmt"/>
         <line num="42" count="7" type="stmt"/>
@@ -255,7 +255,10 @@
         <line num="50" count="7" type="stmt"/>
         <line num="51" count="7" type="stmt"/>
         <line num="52" count="7" type="stmt"/>
-        <line num="53" count="7" type="stmt"/>
+        <line num="53" count="7" type="cond" truecount="0" falsecount="1"/>
+        <line num="54" count="7" type="stmt"/>
+        <line num="55" count="7" type="stmt"/>
+        <line num="56" count="7" type="stmt"/>
       </file>
     </package>
     <package name="components.userCard">
