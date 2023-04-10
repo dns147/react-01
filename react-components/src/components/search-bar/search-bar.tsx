@@ -17,6 +17,24 @@ export default function SearchBar(props: IMoviesProps) {
   }, []);
 
   useEffect(() => {
+    const valueFromLocalStorage = localStorage.getItem('inputValue') as string;
+
+    const makeApiRequest = async () => {
+      try {
+        const dataPromise = await fetchMovieList(valueFromLocalStorage);
+        setMovies(dataPromise.results);
+      } catch (err) {
+        setIsConnectToAPI(false);
+        console.log(err);
+      }
+    };
+
+    {
+      valueFromLocalStorage && makeApiRequest();
+    }
+  }, []);
+
+  useEffect(() => {
     props.updateMovies(movies);
   });
 
