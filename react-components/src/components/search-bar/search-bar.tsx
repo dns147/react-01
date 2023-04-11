@@ -40,6 +40,7 @@ export default function SearchBar(props: IMoviesProps) {
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
+    localStorage.setItem('inputValue', valueInputRef.current);
 
     try {
       const dataPromise = await fetchMovieList(valueInput);
