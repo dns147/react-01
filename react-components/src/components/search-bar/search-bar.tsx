@@ -1,16 +1,20 @@
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
 import { IMoviesProps } from '../../types/types';
 import { fetchMovieList } from '../../utils/api.service';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectValue, setValue } from './searchSlice';
 
 export default function SearchBar(props: IMoviesProps) {
   const valueFromLocalStorage = localStorage.getItem('inputValue') as string;
-  const [valueInput, setValueInput] = useState('');
+  //const [valueInput, setValueInput] = useState('');
   const [movies, setMovies] = useState([]);
   const [isConnectToAPI, setIsConnectToAPI] = useState(true);
   const valueInputRef = useRef(valueFromLocalStorage ?? '');
+  let valueInput = '';
 
   useEffect(() => {
-    setValueInput(valueInputRef.current);
+    valueInput = useSelector(selectValue);
+    //setValueInput(valueInputRef.current);
     return () => {
       localStorage.setItem('inputValue', valueInputRef.current);
     };
@@ -51,9 +55,12 @@ export default function SearchBar(props: IMoviesProps) {
     }
   };
 
+  const dispatch = useDispatch();
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const currentValue: string = event.target.value;
-    setValueInput(currentValue);
+    dispatch(setValue(currentValue));
+    //setValueInput(currentValue);
     valueInputRef.current = currentValue;
   };
 

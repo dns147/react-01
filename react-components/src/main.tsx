@@ -11,7 +11,7 @@ import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import store from './app/store';
 
-export default function App() {
+function App() {
   return (
     <div>
       <Header />
@@ -34,3 +34,10 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </Provider>
   </React.StrictMode>
 );
+
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <App />
+//   </Provider>,
+//   document.getElementById('root')
+// )
