@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import './index.scss';
 import ErrorPage from './routes/error-page';
 import HomePage from './routes/home-page';
@@ -8,6 +9,7 @@ import AboutPage from './routes/about-page';
 import Forms from './routes/forms';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
+import store from './app/store';
 
 export default function App() {
   return (
@@ -27,8 +29,8 @@ export default function App() {
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <Provider store={store}>
       <App />
-    </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
