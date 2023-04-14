@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { useSelector } from 'react-redux';
 
 export const searchSlice = createSlice({
   name: 'search',
@@ -12,12 +13,12 @@ export const searchSlice = createSlice({
   },
 });
 
-// export interface IState {
-//   value: null;
-// }
+export interface IState {
+  value: '';
+}
 
 export const { setValue } = searchSlice.actions;
 
-export const selectValue = (state: any) => state.value.value;
+export const selectValue = (state: IState) => state.value;
 
 export default searchSlice.reducer;

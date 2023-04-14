@@ -5,38 +5,40 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectValue, setValue } from './searchSlice';
 
 export default function SearchBar(props: IMoviesProps) {
-  const valueFromLocalStorage = localStorage.getItem('inputValue') as string;
+  //const valueFromLocalStorage = localStorage.getItem('inputValue') as string;
   //const [valueInput, setValueInput] = useState('');
   const [movies, setMovies] = useState([]);
   const [isConnectToAPI, setIsConnectToAPI] = useState(true);
-  const valueInputRef = useRef(valueFromLocalStorage ?? '');
-  let valueInput = '';
+  //const valueInputRef = useRef(valueFromLocalStorage ?? '');
+  const valueInput = useSelector(selectValue);
 
-  useEffect(() => {
-    valueInput = useSelector(selectValue);
-    //setValueInput(valueInputRef.current);
-    return () => {
-      localStorage.setItem('inputValue', valueInputRef.current);
-    };
-  }, []);
+  // useEffect(() => {
+  //   //valueInput = useSelector(selectValue);
+  //   //setValueInput(valueInputRef.current);
+  //   return () => {
+  //     localStorage.setItem('inputValue', valueInputRef.current);
+  //   };
+  // }, []);
 
-  useEffect(() => {
-    const valueFromLocalStorage = localStorage.getItem('inputValue') as string;
+  //useEffect(() => {
+    //const valueFromLocalStorage = localStorage.getItem('inputValue') as string;
 
-    const makeApiRequest = async () => {
-      try {
-        const dataPromise = await fetchMovieList(valueFromLocalStorage);
-        setMovies(dataPromise.results);
-      } catch (err) {
-        setIsConnectToAPI(false);
-        console.log(err);
-      }
-    };
+    // const makeApiRequest = async () => {
+    //   try {
+    //     const dataPromise = await fetchMovieList(valueInput);
+    //     setMovies(dataPromise.results);
+    //   } catch (err) {
+    //     setIsConnectToAPI(false);
+    //     console.log(err);
+    //   }
+    // };
 
-    {
-      valueFromLocalStorage && makeApiRequest();
-    }
-  }, []);
+    // makeApiRequest();
+
+    //{
+      //valueFromLocalStorage && makeApiRequest();
+    //}
+  //}, []);
 
   useEffect(() => {
     props.updateMovies(movies);
@@ -44,9 +46,10 @@ export default function SearchBar(props: IMoviesProps) {
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    localStorage.setItem('inputValue', valueInputRef.current);
-
+    //localStorage.setItem('inputValue', valueInputRef.current);
+    // const value = useSelector(selectValue);
     try {
+      console.log(valueInput)
       const dataPromise = await fetchMovieList(valueInput);
       setMovies(dataPromise.results);
     } catch (err) {
@@ -61,7 +64,7 @@ export default function SearchBar(props: IMoviesProps) {
     const currentValue: string = event.target.value;
     dispatch(setValue(currentValue));
     //setValueInput(currentValue);
-    valueInputRef.current = currentValue;
+    //valueInputRef.current = currentValue;
   };
 
   return (
