@@ -1,9 +1,9 @@
 import { NavLink, useLocation } from 'react-router-dom';
 
 export default function Header() {
-  //const currentPathname: string = useLocation().pathname.slice(1);
-  //const namePage: string = currentPathname === 'home' ? 'The Movie Database' : currentPathname;
-  const namePage: string = '';
+  const currentPathname: string = useLocation().pathname.slice(1);
+  const namePage: string = currentPathname === 'home' ? 'The Movie Database' : currentPathname;
+
   return (
     <>
       <nav id="nav-menu">
