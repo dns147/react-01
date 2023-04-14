@@ -1,8 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import searchReducer from '../components/search-bar/searchSlice';
+import searchReducer from '../features/searchSlice';
+import movieReducer from '../features/moviesSlice';
 
-export default configureStore({
+const store = configureStore({
   reducer: {
-    search: searchReducer
-  }
+    search: searchReducer,
+    movies: movieReducer,
+  },
 });
+
+export default store;
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

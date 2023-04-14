@@ -1,70 +1,21 @@
-import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
-import { IMoviesProps } from '../../types/types';
-import { fetchMovieList } from '../../utils/api.service';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectValue, setValue } from './searchSlice';
+import { ChangeEvent, FormEvent, useState } from 'react';
+import { setValue } from '../../features/searchSlice';
+import { fetchMovies } from '../../features/moviesSlice';
+import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 
-export default function SearchBar(props: IMoviesProps) {
-  //const valueFromLocalStorage = localStorage.getItem('inputValue') as string;
-  //const [valueInput, setValueInput] = useState('');
-  const [movies, setMovies] = useState([]);
+export default function SearchBar() {
   const [isConnectToAPI, setIsConnectToAPI] = useState(true);
-  //const valueInputRef = useRef(valueFromLocalStorage ?? '');
-  const valueInput = useSelector(selectValue);
-
-  // useEffect(() => {
-  //   //valueInput = useSelector(selectValue);
-  //   //setValueInput(valueInputRef.current);
-  //   return () => {
-  //     localStorage.setItem('inputValue', valueInputRef.current);
-  //   };
-  // }, []);
-
-  //useEffect(() => {
-    //const valueFromLocalStorage = localStorage.getItem('inputValue') as string;
-
-    // const makeApiRequest = async () => {
-    //   try {
-    //     const dataPromise = await fetchMovieList(valueInput);
-    //     setMovies(dataPromise.results);
-    //   } catch (err) {
-    //     setIsConnectToAPI(false);
-    //     console.log(err);
-    //   }
-    // };
-
-    // makeApiRequest();
-
-    //{
-      //valueFromLocalStorage && makeApiRequest();
-    //}
-  //}, []);
-
-  useEffect(() => {
-    props.updateMovies(movies);
-  });
+  const dispatch = useAppDispatch();
+  const valueInput = useAppSelector((state) => state.search.value);
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    //localStorage.setItem('inputValue', valueInputRef.current);
-    // const value = useSelector(selectValue);
-    try {
-      console.log(valueInput)
-      const dataPromise = await fetchMovieList(valueInput);
-      setMovies(dataPromise.results);
-    } catch (err) {
-      setIsConnectToAPI(false);
-      console.log(err);
-    }
+    dispatch(fetchMovies(valueInput));
   };
-
-  const dispatch = useDispatch();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const currentValue: string = event.target.value;
     dispatch(setValue(currentValue));
-    //setValueInput(currentValue);
-    //valueInputRef.current = currentValue;
   };
 
   return (

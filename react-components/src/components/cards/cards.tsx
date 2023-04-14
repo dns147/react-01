@@ -1,12 +1,15 @@
 import { ICardMoviesProps, IMovie } from '../../types/types';
 import Card from './card';
+import { useAppSelector } from '../../utils/hooks';
 
 export default function Cards(props: ICardMoviesProps) {
+  const movies = useAppSelector((state) => state.movies.list);
+
   return (
     <>
-      {props.cardsMovies.length > 0 ? (
+      {movies.length > 0 ? (
         <div className="cards" data-testid="card-list">
-          {props.cardsMovies.map((card: IMovie) => (
+          {movies.map((card: IMovie) => (
             <Card key={card.id} cardItem={card} updateLoader={props.updateLoader} />
           ))}
         </div>

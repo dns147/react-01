@@ -57,7 +57,6 @@ export interface IMoviesProps {
 }
 
 export interface ICardMoviesProps {
-  cardsMovies: IMovie[];
   updateLoader: (state: boolean) => void;
 }
 
@@ -79,3 +78,9 @@ export type Inputs = {
   typeCrew: string;
   foto: FileList;
 };
+
+export interface IMoviesState {
+  list: IMovie[];
+  loading: boolean;
+  error: string | null;
+}
