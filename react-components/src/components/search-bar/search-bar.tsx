@@ -1,12 +1,11 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent } from 'react';
 import { setValue } from '../../features/searchSlice';
 import { fetchMovies } from '../../features/moviesSlice';
 import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 
 export default function SearchBar() {
-  const [isConnectToAPI, setIsConnectToAPI] = useState(true);
   const dispatch = useAppDispatch();
-  const valueInput = useAppSelector((state) => state.search.value);
+  const valueInput = useAppSelector(state => state.search.value);
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -30,7 +29,6 @@ export default function SearchBar() {
           onChange={handleChange}
         />
       </form>
-      {!isConnectToAPI && <h2 className="message-failed">Connect to API Failed!</h2>}
     </>
   );
 }

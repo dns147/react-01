@@ -11,7 +11,7 @@ export const fetchMovies = createAsyncThunk<IMovie[], string, { rejectValue: str
     const response = await fetch(url);
 
     if (!response.ok) {
-      return rejectWithValue('Server Error!');
+      return rejectWithValue('Connect to API Failed!');
     }
 
     const data = await response.json();

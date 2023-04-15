@@ -45,7 +45,6 @@ export interface IUserData {
 
 export interface ICardProps {
   cardItem: IMovie;
-  updateLoader: (state: boolean) => void;
 }
 
 export interface IUserCardProps {
@@ -54,10 +53,6 @@ export interface IUserCardProps {
 
 export interface IMoviesProps {
   updateMovies: (value: IMovie[]) => void;
-}
-
-export interface ICardMoviesProps {
-  updateLoader: (state: boolean) => void;
 }
 
 export interface IProgressBarProps {
