@@ -3,7 +3,7 @@ import Card from './card';
 import { useAppSelector } from '../../utils/hooks';
 
 export default function Cards() {
-  const movies = useAppSelector(state => state.movies.list);
+  const movies = useAppSelector((state) => state.movies.list);
 
   return (
     <>

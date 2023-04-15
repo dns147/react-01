@@ -1,11 +1,16 @@
-import { ChangeEvent, FormEvent } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { setValue } from '../../features/searchSlice';
 import { fetchMovies } from '../../features/moviesSlice';
 import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 
 export default function SearchBar() {
   const dispatch = useAppDispatch();
-  const valueInput = useAppSelector(state => state.search.value);
+  const valueInput = useAppSelector((state) => state.search.value);
+  const [currentValue, setCurrentValue] = useState('');
+
+  useEffect(() => {
+    setCurrentValue(valueInput);
+  }, [valueInput]);
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -25,7 +30,7 @@ export default function SearchBar() {
           aria-label="Search field"
           placeholder="Search Movies"
           type="search"
-          value={valueInput}
+          value={currentValue}
           onChange={handleChange}
         />
       </form>
