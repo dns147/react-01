@@ -7,7 +7,7 @@ export default function HomePage() {
     <>
       <div className="search-container">
         <SearchBar />
-        <ProgressBar />
+        <ProgressBar nameApiRequest={'moviesList'} />
       </div>
       <Cards />
     </>

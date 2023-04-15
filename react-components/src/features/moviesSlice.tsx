@@ -22,8 +22,8 @@ export const fetchMovies = createAsyncThunk<IMovie[], string, { rejectValue: str
 
 const initialState: IMoviesState = {
   list: [],
-  loading: false,
-  error: null,
+  loading1: false,
+  error1: null,
 };
 
 export const moviesSlice = createSlice({
@@ -33,16 +33,16 @@ export const moviesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchMovies.pending, (state) => {
-        state.loading = true;
-        state.error = null;
+        state.loading1 = true;
+        state.error1 = null;
       })
       .addCase(fetchMovies.fulfilled, (state, action) => {
         state.list = action.payload;
-        state.loading = false;
+        state.loading1 = false;
       })
       .addMatcher(isError, (state, action: PayloadAction<string>) => {
-        state.error = action.payload;
-        state.loading = false;
+        state.error1 = action.payload;
+        state.loading1 = false;
       });
   },
 });

@@ -76,6 +76,30 @@ export type Inputs = {
 
 export interface IMoviesState {
   list: IMovie[];
-  loading: boolean;
-  error: string | null;
+  loading1: boolean;
+  error1: string | null;
 }
+
+export interface IMovieOneState {
+  datasMovie: IMovieCard;
+  loading2: boolean;
+  error2: string | null;
+}
+
+export const defaultMovieData = {
+  poster_path: '',
+  adult: false,
+  overview: '',
+  release_date: '',
+  id: 0,
+  original_title: '',
+  original_language: '',
+  title: '',
+  popularity: 0,
+  vote_count: 0,
+  video: false,
+  vote_average: 0,
+  genres: [{ name: '' }],
+  production_companies: [{ name: '' }],
+  budget: 0,
+};
