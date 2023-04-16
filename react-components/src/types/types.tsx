@@ -86,6 +86,12 @@ export interface IMovieOneState {
   error2: string | null;
 }
 
+export interface IFileLoadState {
+  file: string;
+  loading: boolean;
+  error: string | null;
+}
+
 export const defaultMovieData = {
   poster_path: '',
   adult: false,

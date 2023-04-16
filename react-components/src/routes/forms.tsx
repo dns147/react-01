@@ -2,7 +2,10 @@ import { ReactElement, useEffect, useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import '../styles/forms.scss';
 import { IUserData, Inputs } from '../types/types';
-import UserCard from '../components/userCard/userCard';
+import { useAppDispatch, useAppSelector } from '../utils/hooks';
+import { addUser } from '../features/usersSlice';
+import UsersCard from '../components/userCard/usersCard';
+import { fetchLoadFile } from '../features/fileLoadSlice';
 
 export default function Forms() {
   const {
@@ -14,65 +17,61 @@ export default function Forms() {
     mode: 'onSubmit',
   });
 
-  const [users, setUsers] = useState([] as IUserData[]);
-  const [isSaved, setIsSaved] = useState(false);
-  const [data, setData] = useState('');
+  const dispatch = useAppDispatch();
+  const { file, loading } = useAppSelector((state) => state.fileLoad);
+  const [data, setData] = useState({} as IUserData);
+  const [cloneData, setCloneData] = useState({} as IUserData);
+  const [fullData, setFullData] = useState({} as IUserData);
+  const [isLoadFile, setIsLoadFile] = useState(false);
   let confirmation: ReactElement;
 
   useEffect(() => {
-    localStorage.setItem('formData', data);
-  });
+    if (loading) {
+      const cloneData = { ...data };
+      setCloneData(cloneData);
 
-  function loadFileAsync(file: File): Promise<unknown> {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => {
-        resolve(reader.result);
-      };
-      reader.onerror = reject;
-      reader.readAsDataURL(file);
-    });
-  }
-
-  async function getUrlFile(file: File): Promise<void> {
-    try {
-      const imageUrl = (await loadFileAsync(file)) as string;
-      fillUserInfo(imageUrl);
-      setIsSaved(false);
-    } catch (err) {
-      console.log(err);
+      setIsLoadFile(true);
     }
-  }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
 
-  function fillUserInfo(imageUrl: string): void {
-    const dataFromLocalStorage = JSON.parse(localStorage['formData']);
-    const dataUser: IUserData = {
-      name: dataFromLocalStorage['name'],
-      surname: dataFromLocalStorage['surname'],
-      date: dataFromLocalStorage['date'],
-      planet: dataFromLocalStorage['planet'],
-      access: dataFromLocalStorage['access'],
-      typeCrew: dataFromLocalStorage['typeCrew'],
-      urlFoto: imageUrl,
-    };
+  useEffect(() => {
+    if (isLoadFile) {
+      const fullData = { ...cloneData };
+      fullData.urlFoto = file;
+      setFullData(fullData);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [file]);
 
-    const dataUsers = [...users, dataUser];
-    setUsers(dataUsers);
-  }
+  useEffect(() => {
+    if (isLoadFile) {
+      dispatch(addUser(fullData));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch, fullData]);
 
   const onSubmit: SubmitHandler<Inputs> = (form) => {
-    const data = JSON.stringify(form);
-    setData(data);
-    const userFile = form['foto'][0];
-
     if (isValid) {
-      setIsSaved(true);
-      getUrlFile(userFile);
+      const userFile = form['foto'][0];
+      dispatch(fetchLoadFile(userFile));
+
+      const dataUser: IUserData = {
+        name: form['name'],
+        surname: form['surname'],
+        date: form['date'],
+        planet: form['planet'],
+        access: form['access'],
+        typeCrew: form['typeCrew'],
+        urlFoto: file,
+      };
+
+      setData(dataUser);
       reset();
     }
   };
 
-  if (isSaved) {
+  if (loading) {
     confirmation = <h2 className="confirmation-message">Data Successfully Saved</h2>;
   } else {
     confirmation = <h2 className="confirmation-message">User Info</h2>;
@@ -251,11 +250,7 @@ export default function Forms() {
 
       {confirmation}
 
-      <div className="user-cards">
-        {users.map((user: IUserData, index: number) => (
-          <UserCard key={index} userCardItem={user} />
-        ))}
-      </div>
+      <UsersCard />
     </>
   );
 }
