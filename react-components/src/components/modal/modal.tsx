@@ -27,11 +27,7 @@ export default function Modal(props: IModalProps) {
 
   return (
     <div className="overlay fixed-overlay" data-testid="close-overlay" onClick={closeModalOverlay}>
-      <div
-        className="modal"
-        style={{ top: `calc(450px + ${window.pageYOffset}px)` }}
-        data-testid="modal-window"
-      >
+      <div className="modal" data-testid="modal-window">
         <FontAwesomeIcon icon={faXmark} data-testid="close-icon" onClick={closeModal} />
         <ProgressBar nameApiRequest={'movie'} />
         <h3>{dataMovie.title}</h3>
