@@ -1,3 +1,9 @@
 export default function AboutPage() {
-  return <></>;
+  return (
+    <>
+      <div data-testid="about-page">
+        <h1>AboutPage</h1>
+      </div>
+    </>
+  );
 }

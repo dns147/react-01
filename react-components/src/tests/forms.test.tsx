@@ -3,6 +3,9 @@ import { describe, expect, test, vi } from 'vitest';
 import '@testing-library/jest-dom';
 import Forms from '../routes/forms';
 import userEvent from '@testing-library/user-event';
+import store from '../app/store';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('test form component', () => {
   let inputName: HTMLInputElement;
@@ -19,24 +22,51 @@ describe('test form component', () => {
   });
 
   test('it renders', () => {
-    render(<Forms />);
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Forms />
+        </BrowserRouter>
+      </Provider>
+    );
+
     expect(screen.getByText('Destination:')).toBeInTheDocument();
   });
 
   test('it displays form', async () => {
-    render(<Forms />);
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Forms />
+        </BrowserRouter>
+      </Provider>
+    );
+
     const form = await waitFor(() => screen.getByTestId('data-form'));
     expect(form).toBeInTheDocument();
   });
 
   test('after clicking "Send" button, show warning message', async () => {
-    render(<Forms />);
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Forms />
+        </BrowserRouter>
+      </Provider>
+    );
+
     await userEvent.click(screen.getByText('Send'));
     expect(screen.getByText('Name must start with a capital letter.')).toBeInTheDocument();
   });
 
   test('checking the saving of data from the form', async () => {
-    render(<Forms />);
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Forms />
+        </BrowserRouter>
+      </Provider>
+    );
 
     inputName = screen.getByTestId('user-name');
     inputSurname = screen.getByTestId('user-surname');

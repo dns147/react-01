@@ -1,17 +1,24 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, test } from 'vitest';
-import SearchBar from './search-bar';
 import '@testing-library/jest-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import App from '../../app/app';
+import store from '../../app/store';
 
 describe('test search bar component', () => {
   const inputValue = '18';
   let input: HTMLInputElement[];
 
-  const updateData = (): void => {};
-
   beforeEach(() => {
-    render(<SearchBar updateMovies={updateData} />);
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    );
+
     input = screen.getAllByLabelText('Search field');
     input[0].value = inputValue;
   });
@@ -22,15 +29,5 @@ describe('test search bar component', () => {
 
   test('search bar use html tag input', () => {
     expect(input[0].tagName).toBe('INPUT');
-  });
-
-  test('user change data - value not save in local storage', async () => {
-    await userEvent.type(input[0], '3');
-    expect(localStorage.getItem('inputValue')).toBe('');
-  });
-
-  test('after submit - value save in local storage', async () => {
-    await userEvent.click(screen.getByTestId('submit'));
-    expect(localStorage.getItem('inputValue')).toBe('183');
   });
 });

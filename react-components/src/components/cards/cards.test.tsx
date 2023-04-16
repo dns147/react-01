@@ -3,7 +3,10 @@ import { describe, expect, test } from 'vitest';
 import Card from './card';
 import '@testing-library/jest-dom';
 import Cards from './cards';
-import { ICardProps, IMovie } from '../../types/types';
+import { Provider } from 'react-redux';
+import store from '../../app/store';
+import { BrowserRouter } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
 
 describe('test cards component', () => {
   const card = {
@@ -23,39 +26,58 @@ describe('test cards component', () => {
     backdrop_path: '',
   };
 
-  const dataFull: IMovie[] = [card];
-  const dataEmpty: IMovie[] = [];
-  const props: ICardProps = {
-    cardItem: card,
-    updateLoader: () => {},
-  };
-  const updateLoader = (state: boolean): void => {
-    props.updateLoader(state);
-  };
-  updateLoader(true);
-
   test('loader not renders', () => {
-    render(<Card cardItem={card} updateLoader={updateLoader} />);
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Card cardItem={card} />
+        </BrowserRouter>
+      </Provider>
+    );
+
     expect(screen.queryByTestId('spinner')).not.toBeInTheDocument();
     expect(screen.queryByText('No Movies Found!')).not.toBeInTheDocument();
   });
 
   test('it displays "No Movies Found!" if not found movies', async () => {
-    render(<Cards cardsMovies={dataEmpty} updateLoader={updateLoader} />);
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Cards />
+        </BrowserRouter>
+      </Provider>
+    );
+
     expect(screen.getByText('No Movies Found!')).toBeInTheDocument();
   });
 
-  test('it displays a list of cards', async () => {
-    render(<Cards cardsMovies={dataFull} updateLoader={updateLoader} />);
-    const cardsList = await waitFor(() => screen.getByTestId('card-list'));
-    expect(cardsList).toBeInTheDocument();
+  test('it render a card', async () => {
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Card cardItem={card} />
+        </BrowserRouter>
+      </Provider>
+    );
+
+    const cardItem = await waitFor(() => screen.getByTestId('card-item'));
+    expect(cardItem).toBeInTheDocument();
   });
 
   test('open modal window', async () => {
-    render(<Card cardItem={card} updateLoader={updateLoader} />);
-    const cardItem = await waitFor(() => screen.queryByTestId('card-item'));
-    expect(cardItem).not.toBeInTheDocument();
-    //await userEvent.click(cardItem);
-    expect(screen.queryByTestId('modal-window')).not.toBeInTheDocument();
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Card cardItem={card} />
+        </BrowserRouter>
+      </Provider>
+    );
+
+    const cardItem = await waitFor(() => screen.getByTestId('card-item'));
+    expect(cardItem).toBeInTheDocument();
+
+    await userEvent.click(cardItem);
+
+    expect(screen.getByTestId('modal-window')).toBeInTheDocument();
   });
 });

@@ -3,6 +3,9 @@ import { describe, expect, test } from 'vitest';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
 import Modal from './modal';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import store from '../../app/store';
 
 describe('test modal component', () => {
   const id = 1;
@@ -10,12 +13,19 @@ describe('test modal component', () => {
 
   test('close modal window', async () => {
     expect(screen.queryByTestId('modal-window')).not.toBeInTheDocument();
-    render(<Modal setOpen={setOpen} idMovie={id} />);
+
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Modal setOpen={setOpen} idMovie={id} />
+        </BrowserRouter>
+      </Provider>
+    );
+
     expect(screen.getByTestId('modal-window')).toBeInTheDocument();
 
     await userEvent.click(screen.getByTestId('close-overlay'));
 
-    //await waitFor(() => screen.getByTestId('modal-window'));
     expect(screen.getByTestId('modal-window')).toBeInTheDocument();
   });
 });
