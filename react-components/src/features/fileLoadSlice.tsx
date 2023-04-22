@@ -1,4 +1,9 @@
-import { AnyAction, PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import * as toolkitRaw from '@reduxjs/toolkit';
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+const { createSlice, createAsyncThunk } = ((toolkitRaw as any).default ??
+  toolkitRaw) as typeof toolkitRaw;
+
+import { AnyAction, PayloadAction } from '@reduxjs/toolkit';
 import { IFileLoadState } from '../types/types';
 
 function loadFile(file: File): Promise<unknown> {
