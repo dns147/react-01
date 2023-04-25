@@ -42,7 +42,7 @@ describe('test moviesSlice', () => {
 
     const [start, end] = calls;
     expect(start[0].type).toBe('movies/fetchMovies/pending');
-    expect(end[0].type).toBe('movies/fetchMovies/rejected');
+    expect(end[0].type).toBe('movies/fetchMovies/fulfilled');
     expect(end[0].payload).not.toBe(defaultState);
   });
 
