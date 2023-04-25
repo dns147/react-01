@@ -49,4 +49,18 @@ describe('Home page E2E testing', () => {
     cy.get('[data-testid="close-icon"]').click();
     cy.get('div[data-testid="modal-window"]').should('not.exist');
   });
+
+  it('should save search cards when routing', () => {
+    cy.visit('/');
+
+    cy.get('input[type="search"]').type('Rocky');
+    cy.get('button[type="submit"]').click();
+    cy.get('div[data-testid="card-list"]').should('be.visible');
+
+    cy.get('a[href="/forms"]').click();
+    cy.get('a[href="/home"]').click();
+
+    cy.get('input[type="search"]').should('have.value', 'Rocky');
+    cy.get('div[data-testid="card-list"]').should('be.visible');
+  });
 });

@@ -94,7 +94,7 @@ export default function Forms() {
           data-testid="user-name"
         />
         {errors?.name && (
-          <span className="error-message">
+          <span className="error-message" data-testid="user-name-error">
             {errors.name?.message || 'Name must start with a capital letter.'}
           </span>
         )}
@@ -186,7 +186,7 @@ export default function Forms() {
           </label>
           <label>
             Crew module:
-            <input type="checkbox" {...register('access')} value="crew" />
+            <input type="checkbox" {...register('access')} value="crew" data-testid="user-access-crew" />
           </label>
           <label>
             Medical module:

@@ -12,10 +12,11 @@ dist
 dist-ssr
 *.local
 
+cypress
+coverage
+
 /coverage.data
 /coverage/
-
-cypress
 
 # Editor directories and files
 .vscode/*
