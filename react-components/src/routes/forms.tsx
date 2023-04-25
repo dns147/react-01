@@ -186,7 +186,12 @@ export default function Forms() {
           </label>
           <label>
             Crew module:
-            <input type="checkbox" {...register('access')} value="crew" data-testid="user-access-crew" />
+            <input
+              type="checkbox"
+              {...register('access')}
+              value="crew"
+              data-testid="user-access-crew"
+            />
           </label>
           <label>
             Medical module:

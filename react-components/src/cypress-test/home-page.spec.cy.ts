@@ -30,9 +30,11 @@ describe('Home page E2E testing', () => {
 
     cy.get('div[data-testid="modal-window"] > h3').should('be.visible');
 
-    cy.get('div[data-testid="modal-window"] > h3').invoke('text').then((text => {
-      expect(text.trim()).to.eq('Rocky')
-    }));
+    cy.get('div[data-testid="modal-window"] > h3')
+      .invoke('text')
+      .then((text) => {
+        expect(text.trim()).to.eq('Rocky');
+      });
   });
 
   it('should close modal window', () => {
@@ -53,14 +55,21 @@ describe('Home page E2E testing', () => {
   it('should save search cards when routing', () => {
     cy.visit('/');
 
-    cy.get('input[type="search"]').type('Rocky');
+    cy.get('input[type="search"]').type('Rocky').should('have.value', 'Rocky');
+
     cy.get('button[type="submit"]').click();
     cy.get('div[data-testid="card-list"]').should('be.visible');
 
-    cy.get('a[href="/forms"]').click();
-    cy.get('a[href="/home"]').click();
+    cy.get('input[type="search"]')
+      .invoke('val')
+      .then((val) => {
+        const inputValue = String(val);
 
-    cy.get('input[type="search"]').should('have.value', 'Rocky');
-    cy.get('div[data-testid="card-list"]').should('be.visible');
+        cy.get('a[href="/forms"]').click();
+        cy.get('a[href="/home"]').click();
+
+        cy.get('input[type="search"]').should('have.value', inputValue);
+        cy.get('div[data-testid="card-list"]').should('be.visible');
+      });
   });
 });

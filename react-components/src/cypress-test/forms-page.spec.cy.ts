@@ -29,7 +29,7 @@ describe('Forms page E2E testing', () => {
     cy.get('input[data-testid="user-access"]').check().should('be.checked');
     cy.get('input[data-testid="user-access-crew"]').check().should('be.checked');
     cy.get('input[data-testid="user-typeCrew"]').check().should('be.checked');
-    
+
     cy.get('input[data-testid="user-file"]').selectFile({
       contents: './src/assets/Rocky.png',
       fileName: 'Rocky.png',
@@ -52,7 +52,7 @@ describe('Forms page E2E testing', () => {
     cy.get('input[data-testid="user-access"]').check().should('be.checked');
     cy.get('input[data-testid="user-access-crew"]').check().should('be.checked');
     cy.get('input[data-testid="user-typeCrew"]').check().should('be.checked');
-    
+
     cy.get('input[data-testid="user-file"]').selectFile({
       contents: './src/assets/Rocky.png',
       fileName: 'Rocky.png',
@@ -61,7 +61,7 @@ describe('Forms page E2E testing', () => {
     });
 
     cy.get('button[type="submit"]').click();
-    
+
     cy.get('input[data-testid="user-name"]').type('Rocky2').should('have.value', 'Rocky2');
     cy.get('input[data-testid="user-surname"]').type('Balboa2').should('have.value', 'Balboa2');
     cy.get('input[data-testid="user-date"]').type('2023-04-25').should('have.value', '2023-04-25');
@@ -69,7 +69,7 @@ describe('Forms page E2E testing', () => {
     cy.get('input[data-testid="user-access"]').check().should('be.checked');
     cy.get('input[data-testid="user-access-crew"]').check().should('be.checked');
     cy.get('input[data-testid="user-typeCrew"]').check().should('be.checked');
-    
+
     cy.get('input[data-testid="user-file"]').selectFile({
       contents: './src/assets/tiger.jpg',
       fileName: 'tiger.jpg',
