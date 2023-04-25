@@ -9,8 +9,8 @@ export default function Cards() {
     <>
       {movies.length > 0 ? (
         <div className="cards" data-testid="card-list">
-          {movies.map((card: IMovie) => (
-            <Card key={card.id} cardItem={card} />
+          {movies.map((card: IMovie, index: number) => (
+            <Card key={card.id} id={index} cardItem={card} />
           ))}
         </div>
       ) : (

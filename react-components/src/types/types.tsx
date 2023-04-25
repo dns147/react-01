@@ -45,6 +45,7 @@ export interface IUserData {
 
 export interface ICardProps {
   cardItem: IMovie;
+  id: number;
 }
 
 export interface IUserCardProps {

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1682313027212" clover="3.2.0">
-  <project timestamp="1682313027212" name="All files">
+<coverage generated="1682423270536" clover="3.2.0">
+  <project timestamp="1682423270536" name="All files">
     <metrics statements="998" coveredstatements="958" conditionals="111" coveredconditionals="89" methods="51" coveredmethods="43" elements="1160" coveredelements="1090" complexity="0" loc="998" ncloc="998" packages="12" files="23" classes="23"/>
     <package name="app">
       <metrics statements="47" coveredstatements="47" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="app.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/app/app.tsx">
+      <file name="app.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\app\app.tsx">
         <metrics statements="23" coveredstatements="23" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -30,7 +30,7 @@
         <line num="22" count="2" type="stmt"/>
         <line num="23" count="2" type="stmt"/>
       </file>
-      <file name="store.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/app/store.tsx">
+      <file name="store.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\app\store.tsx">
         <metrics statements="24" coveredstatements="24" conditionals="1" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -60,7 +60,7 @@
     </package>
     <package name="components.cards">
       <metrics statements="48" coveredstatements="43" conditionals="6" coveredconditionals="5" methods="3" coveredmethods="3"/>
-      <file name="card.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/components/cards/card.tsx">
+      <file name="card.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\components\cards\card.tsx">
         <metrics statements="27" coveredstatements="27" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -90,7 +90,7 @@
         <line num="26" count="4" type="stmt"/>
         <line num="27" count="4" type="stmt"/>
       </file>
-      <file name="cards.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/components/cards/cards.tsx">
+      <file name="cards.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\components\cards\cards.tsx">
         <metrics statements="21" coveredstatements="16" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -117,7 +117,7 @@
     </package>
     <package name="components.footer">
       <metrics statements="26" coveredstatements="26" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="footer.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/components/footer/footer.tsx">
+      <file name="footer.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\components\footer\footer.tsx">
         <metrics statements="26" coveredstatements="26" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -149,7 +149,7 @@
     </package>
     <package name="components.header">
       <metrics statements="23" coveredstatements="23" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="header.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/components/header/header.tsx">
+      <file name="header.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\components\header\header.tsx">
         <metrics statements="23" coveredstatements="23" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -178,7 +178,7 @@
     </package>
     <package name="components.modal">
       <metrics statements="66" coveredstatements="66" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="2"/>
-      <file name="modal.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/components/modal/modal.tsx">
+      <file name="modal.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\components\modal\modal.tsx">
         <metrics statements="66" coveredstatements="66" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -250,7 +250,7 @@
     </package>
     <package name="components.progress-bar">
       <metrics statements="48" coveredstatements="48" conditionals="12" coveredconditionals="9" methods="1" coveredmethods="1"/>
-      <file name="progress-bar.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/components/progress-bar/progress-bar.tsx">
+      <file name="progress-bar.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\components\progress-bar\progress-bar.tsx">
         <metrics statements="48" coveredstatements="48" conditionals="12" coveredconditionals="9" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -304,7 +304,7 @@
     </package>
     <package name="components.search-bar">
       <metrics statements="39" coveredstatements="33" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="1"/>
-      <file name="search-bar.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/components/search-bar/search-bar.tsx">
+      <file name="search-bar.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\components\search-bar\search-bar.tsx">
         <metrics statements="39" coveredstatements="33" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -349,7 +349,7 @@
     </package>
     <package name="components.userCard">
       <metrics statements="52" coveredstatements="51" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
-      <file name="userCard.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/components/userCard/userCard.tsx">
+      <file name="userCard.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\components\userCard\userCard.tsx">
         <metrics statements="35" coveredstatements="35" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -387,7 +387,7 @@
         <line num="34" count="2" type="stmt"/>
         <line num="35" count="2" type="stmt"/>
       </file>
-      <file name="usersCard.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/components/userCard/usersCard.tsx">
+      <file name="usersCard.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\components\userCard\usersCard.tsx">
         <metrics statements="17" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -410,7 +410,7 @@
     </package>
     <package name="features">
       <metrics statements="231" coveredstatements="209" conditionals="37" coveredconditionals="29" methods="20" coveredmethods="15"/>
-      <file name="fileLoadSlice.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/features/fileLoadSlice.tsx">
+      <file name="fileLoadSlice.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\features\fileLoadSlice.tsx">
         <metrics statements="67" coveredstatements="63" conditionals="13" coveredconditionals="11" methods="6" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -480,7 +480,7 @@
         <line num="66" count="25" type="stmt"/>
         <line num="67" count="25" type="stmt"/>
       </file>
-      <file name="movieOneSlice.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/features/movieOneSlice.tsx">
+      <file name="movieOneSlice.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\features\movieOneSlice.tsx">
         <metrics statements="56" coveredstatements="47" conditionals="9" coveredconditionals="7" methods="4" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -539,7 +539,7 @@
         <line num="55" count="25" type="stmt"/>
         <line num="56" count="25" type="stmt"/>
       </file>
-      <file name="moviesSlice.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/features/moviesSlice.tsx">
+      <file name="moviesSlice.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\features\moviesSlice.tsx">
         <metrics statements="59" coveredstatements="50" conditionals="9" coveredconditionals="7" methods="4" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -601,7 +601,7 @@
         <line num="58" count="25" type="stmt"/>
         <line num="59" count="25" type="stmt"/>
       </file>
-      <file name="searchSlice.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/features/searchSlice.tsx">
+      <file name="searchSlice.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\features\searchSlice.tsx">
         <metrics statements="21" coveredstatements="21" conditionals="3" coveredconditionals="2" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -625,7 +625,7 @@
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
       </file>
-      <file name="usersSlice.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/features/usersSlice.tsx">
+      <file name="usersSlice.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\features\usersSlice.tsx">
         <metrics statements="28" coveredstatements="28" conditionals="3" coveredconditionals="2" methods="3" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -659,7 +659,7 @@
     </package>
     <package name="routes">
       <metrics statements="290" coveredstatements="284" conditionals="30" coveredconditionals="22" methods="8" coveredmethods="8"/>
-      <file name="about-page.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/routes/about-page.tsx">
+      <file name="about-page.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\routes\about-page.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="1" type="stmt"/>
@@ -671,7 +671,7 @@
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
       </file>
-      <file name="error-page.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/routes/error-page.tsx">
+      <file name="error-page.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\routes\error-page.tsx">
         <metrics statements="10" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="1" type="stmt"/>
@@ -684,7 +684,7 @@
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
       </file>
-      <file name="forms.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/routes/forms.tsx">
+      <file name="forms.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\routes\forms.tsx">
         <metrics statements="256" coveredstatements="250" conditionals="27" coveredconditionals="19" methods="5" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -943,7 +943,7 @@
         <line num="255" count="10" type="stmt"/>
         <line num="256" count="10" type="stmt"/>
       </file>
-      <file name="home-page.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/routes/home-page.tsx">
+      <file name="home-page.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\routes\home-page.tsx">
         <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -964,7 +964,7 @@
     </package>
     <package name="types">
       <metrics statements="111" coveredstatements="111" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="types.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/types/types.tsx">
+      <file name="types.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\types\types.tsx">
         <metrics statements="111" coveredstatements="111" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1081,7 +1081,7 @@
     </package>
     <package name="utils">
       <metrics statements="17" coveredstatements="17" conditionals="7" coveredconditionals="7" methods="7" coveredmethods="7"/>
-      <file name="api.service.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/utils/api.service.tsx">
+      <file name="api.service.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\utils\api.service.tsx">
         <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -1096,7 +1096,7 @@
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="cond" truecount="1" falsecount="0"/>
       </file>
-      <file name="hooks.tsx" path="/Users/deniszhuravlev/Documents/React_RS/react-01/react-components/src/utils/hooks.tsx">
+      <file name="hooks.tsx" path="E:\RS-School-2022-2023\React\react-01\react-components\src\utils\hooks.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>

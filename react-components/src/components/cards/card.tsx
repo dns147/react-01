@@ -14,7 +14,7 @@ export default function Card(props: ICardProps) {
 
   return (
     <>
-      <div className="item" data-testid="card-item" onClick={openModal}>
+      <div className="item" id={String(props.id)} data-testid="card-item" onClick={openModal}>
         <h3>
           {title} ({year})
         </h3>
