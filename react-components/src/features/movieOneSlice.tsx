@@ -1,6 +1,7 @@
 import * as toolkitRaw from '@reduxjs/toolkit';
-// eslint-disable-next-line  @typescript-eslint/no-explicit-any
-const { createSlice, createAsyncThunk } = ((toolkitRaw as any).default ??
+
+type TypeToolkitRaw = typeof toolkitRaw & { default?: unknown };
+const { createSlice, createAsyncThunk } = ((toolkitRaw as TypeToolkitRaw).default ??
   toolkitRaw) as typeof toolkitRaw;
 
 import { AnyAction, PayloadAction } from '@reduxjs/toolkit';

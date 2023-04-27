@@ -1,6 +1,8 @@
 import * as toolkitRaw from '@reduxjs/toolkit';
-// eslint-disable-next-line  @typescript-eslint/no-explicit-any
-const { configureStore } = ((toolkitRaw as any).default ?? toolkitRaw) as typeof toolkitRaw;
+
+type TypeToolkitRaw = typeof toolkitRaw & { default?: unknown };
+const { configureStore } = ((toolkitRaw as TypeToolkitRaw).default ??
+  toolkitRaw) as typeof toolkitRaw;
 
 import searchReducer from '../features/searchSlice';
 import moviesReducer from '../features/moviesSlice';

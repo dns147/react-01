@@ -1,6 +1,7 @@
 import * as toolkitRaw from '@reduxjs/toolkit';
-// eslint-disable-next-line  @typescript-eslint/no-explicit-any
-const { createSlice } = ((toolkitRaw as any).default ?? toolkitRaw) as typeof toolkitRaw;
+
+type TypeToolkitRaw = typeof toolkitRaw & { default?: unknown };
+const { createSlice } = ((toolkitRaw as TypeToolkitRaw).default ?? toolkitRaw) as typeof toolkitRaw;
 
 import { PayloadAction } from '@reduxjs/toolkit';
 import { IUserData } from '../types/types';
