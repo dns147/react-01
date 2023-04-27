@@ -26,11 +26,13 @@ describe('test cards component', () => {
     backdrop_path: '',
   };
 
+  const index = 0;
+
   test('loader not renders', () => {
     render(
       <Provider store={store}>
         <BrowserRouter>
-          <Card cardItem={card} />
+          <Card id={index} cardItem={card} />
         </BrowserRouter>
       </Provider>
     );
@@ -55,7 +57,7 @@ describe('test cards component', () => {
     render(
       <Provider store={store}>
         <BrowserRouter>
-          <Card cardItem={card} />
+          <Card id={index} cardItem={card} />
         </BrowserRouter>
       </Provider>
     );
@@ -68,7 +70,7 @@ describe('test cards component', () => {
     render(
       <Provider store={store}>
         <BrowserRouter>
-          <Card cardItem={card} />
+          <Card id={index} cardItem={card} />
         </BrowserRouter>
       </Provider>
     );

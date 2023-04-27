@@ -1,10 +1,8 @@
 import { useState } from 'react';
-//import { createPortal } from 'react-dom';
 import { ICardProps } from '../../types/types';
 import Modal from '../modal/modal';
 
 const API_IMG = 'https://image.tmdb.org/t/p/w300';
-// const appRoot = document.getElementById('root') as HTMLElement;
 
 export default function Card(props: ICardProps) {
   const { title, poster_path, release_date, id } = props.cardItem;
