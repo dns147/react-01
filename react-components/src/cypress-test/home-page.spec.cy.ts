@@ -8,6 +8,26 @@ describe('Home page E2E testing', () => {
     cy.get('button[type="submit"]').should('have.text', '');
   });
 
+  it('should search and show popular movies', () => {
+    cy.visit('/');
+
+    cy.get('input[type="search"]').should('have.value', '');
+    cy.get('div[data-testid="card-list"]').should('be.visible');
+  });
+
+  it('should have message "No Movies Found!"', () => {
+    cy.visit('/');
+
+    cy.get('input[type="search"]').type('rrrrr');
+    cy.get('h2')
+      .invoke('text')
+      .then((text) => {
+        expect(text.trim()).to.eq('No Movies Found!');
+      });
+
+    cy.get('div[data-testid="card-list"]').should('not.exist');
+  });
+
   it('should search films', () => {
     cy.visit('/');
 
