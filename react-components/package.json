@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "tsx server.tsx",
     "dev": "node server",
     "build": "npm run build:client && npm run build:server",
     "build:client": "vite build --outDir dist/client",
@@ -60,6 +61,7 @@
     "redux": "^4.2.1",
     "sass": "^1.59.3",
     "start-server-and-test": "^2.0.0",
+    "tsx": "^3.12.6",
     "typescript": "^4.9.3",
     "vite": "^4.2.0",
     "vitest": "^0.29.3"

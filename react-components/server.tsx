@@ -1,19 +1,20 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import express from 'express';
+import express, { Express, Request, Response } from 'express';
 import renderApp from './dist/server/entry-server.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT || 3001;
 const html = fs.readFileSync(path.resolve(__dirname, './dist/client/index.html')).toString();
 const parts = html.split('not rendered');
-const app = express();
+const app: Express = express();
 
 app.use('/assets', express.static(path.resolve(__dirname, './dist/client/assets')));
 
-app.use((req, res) => {
+app.use((req: Request, res: Response) => {
   res.write(parts[0]);
+  
   const stream = renderApp(req.url, {
     onShellReady() {
       stream.pipe(res);
