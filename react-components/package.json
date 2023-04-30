@@ -4,8 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "tsx server.tsx",
-    "dev": "node server",
+    "dev": "tsx server.tsx",
     "build": "npm run build:client && npm run build:server",
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
@@ -15,8 +14,11 @@
     "linting": "eslint . --ext .tsx",
     "prettier": "npx prettier --write .",
     "test": "vitest",
-    "test:cypress": "start-server-and-test dev http://localhost:3001 cypress",
-    "cypress": "cypress open",
+    "test:cypress:open": "start-server-and-test dev http://localhost:3001 cypress:open",
+    "test:cypress:run": "start-server-and-test dev http://localhost:3001 cypress:run",
+    "cypress:run": "cypress run",
+    "cypress:open": "cypress open",
+    "cypres:coverage": "npx nyc report --reporter=text-summary",
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
@@ -42,7 +44,8 @@
     "@typescript-eslint/parser": "^5.55.0",
     "@vitejs/plugin-react": "^3.1.0",
     "@vitest/coverage-c8": "^0.29.3",
-    "cypress": "^12.10.0",
+    "babel-plugin-istanbul": "^6.1.1",
+    "cypress": "^12.11.0",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-import-resolver-typescript": "^3.5.3",
@@ -52,8 +55,10 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
+    "istanbul-lib-coverage": "^3.2.0",
     "jsdom": "^21.1.1",
     "lint-staged": "^13.2.0",
+    "nyc": "^15.1.0",
     "prettier": "^2.8.4",
     "react-hook-form": "^7.43.9",
     "react-redux": "^8.0.5",
@@ -64,6 +69,7 @@
     "tsx": "^3.12.6",
     "typescript": "^4.9.3",
     "vite": "^4.2.0",
+    "vite-plugin-istanbul": "^4.0.1",
     "vitest": "^0.29.3"
   }
 }

@@ -1,15 +1,23 @@
 import { defineConfig } from 'cypress';
-//import '@cypress/code-coverage/task';
+import codeCoverageTask from '@cypress/code-coverage/task';
+//import codeCoverageUseBabelrc from '@cypress/code-coverage/use-babelrc';
 
 export default defineConfig({
+  // env: {
+  //   codeCoverage: {
+  //     //exclude: './src/cypress-test/',
+  //     exclude: 'cypress/**/*.*',
+  //   },
+  // },
   e2e: {
     video: false,
     baseUrl: 'http://localhost:3001',
-    supportFile: false,
     specPattern: './src/cypress-test/',
     setupNodeEvents(on, config) {
-      //require('@cypress/code-coverage/task')(on, config)
-      //return config
+      codeCoverageTask(on, config);
+      //on('file:preprocessor', codeCoverageUseBabelrc);
+      return config;
     },
+    //experimentalStudio: true,
   },
 });
