@@ -1,15 +1,15 @@
 /// <reference types="cypress" />
 
 describe('Forms page E2E testing', () => {
-  it('should have a user form', () => {
+  beforeEach(() => {
     cy.visit('/forms');
+  });
 
+  it('should have a user form', () => {
     cy.get('form[data-testid="data-form"]').should('be.visible');
   });
 
   it('should have warning message', () => {
-    cy.visit('/forms');
-
     cy.get('input[data-testid="user-name"]').type('rocky').should('have.value', 'rocky');
 
     cy.get('button[type="submit"]').click();
@@ -20,8 +20,6 @@ describe('Forms page E2E testing', () => {
   });
 
   it('should fill form and create user card', () => {
-    cy.visit('/forms');
-
     cy.get('input[data-testid="user-name"]').type('Rocky').should('have.value', 'Rocky');
     cy.get('input[data-testid="user-surname"]').type('Balboa').should('have.value', 'Balboa');
     cy.get('input[data-testid="user-date"]').type('2023-04-25').should('have.value', '2023-04-25');
@@ -43,8 +41,6 @@ describe('Forms page E2E testing', () => {
   });
 
   it('should save user card when routing', () => {
-    cy.visit('/forms');
-
     cy.get('input[data-testid="user-name"]').type('Rocky').should('have.value', 'Rocky');
     cy.get('input[data-testid="user-surname"]').type('Balboa').should('have.value', 'Balboa');
     cy.get('input[data-testid="user-date"]').type('2023-04-25').should('have.value', '2023-04-25');

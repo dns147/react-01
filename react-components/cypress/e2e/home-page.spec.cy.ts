@@ -1,23 +1,21 @@
 /// <reference types="cypress" />
 
 describe('Home page E2E testing', () => {
-  it('should have a search form', () => {
+  beforeEach(() => {
     cy.visit('/');
+  });
 
+  it('should have a search form', () => {
     cy.get('input[type="search"]').should('have.value', '');
     cy.get('button[type="submit"]').should('have.text', '');
   });
 
   it('should search and show popular movies', () => {
-    cy.visit('/');
-
     cy.get('input[type="search"]').should('have.value', '');
     cy.get('div[data-testid="card-list"]').should('be.visible');
   });
 
   it('should have message "No Movies Found!"', () => {
-    cy.visit('/');
-
     cy.get('input[type="search"]').type('rrrrr');
     cy.get('h2')
       .invoke('text')
@@ -29,8 +27,6 @@ describe('Home page E2E testing', () => {
   });
 
   it('should search films', () => {
-    cy.visit('/');
-
     cy.get('input[type="search"]').type('Rocky').should('have.value', 'Rocky');
 
     cy.get('button[type="submit"]').click();
@@ -38,8 +34,6 @@ describe('Home page E2E testing', () => {
   });
 
   it('should open modal window', () => {
-    cy.visit('/');
-
     cy.get('input[type="search"]').type('Rocky').should('have.value', 'Rocky');
 
     cy.get('button[type="submit"]').click();
@@ -58,8 +52,6 @@ describe('Home page E2E testing', () => {
   });
 
   it('should close modal window', () => {
-    cy.visit('/');
-
     cy.get('input[type="search"]').type('Rocky').should('have.value', 'Rocky');
 
     cy.get('button[type="submit"]').click();
@@ -73,8 +65,6 @@ describe('Home page E2E testing', () => {
   });
 
   it('should save search cards when routing', () => {
-    cy.visit('/');
-
     cy.get('input[type="search"]').type('Rocky').should('have.value', 'Rocky');
 
     cy.get('button[type="submit"]').click();
