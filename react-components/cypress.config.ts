@@ -5,7 +5,7 @@ import vitePreprocessor from 'cypress-vite';
 export default defineConfig({
   env: {
     codeCoverage: {
-      exclude: 'cypress/**/*.spec.cy.ts',
+      exclude: 'cypress/**/*.*',
     },
   },
   e2e: {

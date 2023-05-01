@@ -3,5 +3,5 @@
   "all": true,
   "check-coverage": true,
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["src/tests", "**/types.ts", "**/tests-setup.ts", "cypress/**/*.*", "**/*.d.ts"]
+  "exclude": ["cypress/**/*.*", "**/*.d.ts", "**/*.cy.tsx", "**/*.cy.ts"]
 }
