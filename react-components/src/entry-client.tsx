@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import store from './app/store';
 import './index.scss';
 
+delete window.__PRELOADED_STATE__;
+
 ReactDOM.hydrateRoot(
   document.getElementById('root') as HTMLElement,
   <React.StrictMode>
