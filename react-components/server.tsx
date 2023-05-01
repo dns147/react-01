@@ -53,7 +53,6 @@ function renderFullPage(html, preloadedState) {
         <script>
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
         </script>
-        <script type="module" src="/src/entry-client.tsx"></script>
       </body>
     </html>
   `;
