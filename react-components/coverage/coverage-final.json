@@ -1,0 +1,344 @@
+{
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/entry-client.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/entry-client.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/entry-server.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/entry-server.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/main.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/main.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/app/app.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/app/app.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/app/store.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/app/store.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/components/cards/card.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/components/cards/card.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/components/cards/cards.test.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/components/cards/cards.test.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/components/cards/cards.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/components/cards/cards.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/components/footer/footer.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/components/footer/footer.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/components/header/header.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/components/header/header.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/components/modal/modal.test.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/components/modal/modal.test.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/components/modal/modal.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/components/modal/modal.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/components/progress-bar/progress-bar.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/components/progress-bar/progress-bar.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/components/search-bar/search-bar.test.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/components/search-bar/search-bar.test.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/components/search-bar/search-bar.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/components/search-bar/search-bar.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/components/userCard/userCard.test.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/components/userCard/userCard.test.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/components/userCard/userCard.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/components/userCard/userCard.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/components/userCard/usersCard.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/components/userCard/usersCard.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/features/fileLoadSlice.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/features/fileLoadSlice.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/features/movieOneSlice.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/features/movieOneSlice.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/features/moviesSlice.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/features/moviesSlice.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/features/popularMoviesSlice.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/features/popularMoviesSlice.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/features/searchSlice.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/features/searchSlice.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/features/usersSlice.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/features/usersSlice.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/fileLoadSlice.test.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/fileLoadSlice.test.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/movieOneSlice.test.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/movieOneSlice.test.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/moviesSlice.test.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/moviesSlice.test.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/popularMoviesSlice.test.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/popularMoviesSlice.test.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/searchSlice.test.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/searchSlice.test.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/usersSlice.test.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/usersSlice.test.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/routes/about-page.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/routes/about-page.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/routes/error-page.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/routes/error-page.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/routes/forms.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/routes/forms.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/routes/home-page.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/routes/home-page.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/types/types.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/types/types.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/utils/api.service.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/utils/api.service.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/utils/api.test.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/utils/api.test.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "E:/RS-School-2022-2023/React/react-01/react-components/src/utils/hooks.tsx": {
+    "path": "E:/RS-School-2022-2023/React/react-01/react-components/src/utils/hooks.tsx",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  }
+}

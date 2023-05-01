@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1682940094267" clover="3.2.0">
+  <project timestamp="1682940094267" name="All files">
+    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="14" files="38" classes="38"/>
+    <package name="src">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="entry-client.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/entry-client.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="entry-server.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/entry-server.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="main.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/main.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.app">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="app.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/app/app.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="store.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/app/store.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.cards">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="card.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/components/cards/card.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="cards.test.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/components/cards/cards.test.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="cards.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/components/cards/cards.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.footer">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="footer.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/components/footer/footer.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.header">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="header.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/components/header/header.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.modal">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="modal.test.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/components/modal/modal.test.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="modal.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/components/modal/modal.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.progress-bar">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="progress-bar.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/components/progress-bar/progress-bar.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.search-bar">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="search-bar.test.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/components/search-bar/search-bar.test.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="search-bar.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/components/search-bar/search-bar.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.components.userCard">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="userCard.test.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/components/userCard/userCard.test.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="userCard.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/components/userCard/userCard.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="usersCard.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/components/userCard/usersCard.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.features">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="fileLoadSlice.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/features/fileLoadSlice.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="movieOneSlice.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/features/movieOneSlice.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="moviesSlice.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/features/moviesSlice.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="popularMoviesSlice.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/features/popularMoviesSlice.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="searchSlice.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/features/searchSlice.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="usersSlice.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/features/usersSlice.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.features.features-tests">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="fileLoadSlice.test.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/fileLoadSlice.test.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="movieOneSlice.test.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/movieOneSlice.test.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="moviesSlice.test.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/moviesSlice.test.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="popularMoviesSlice.test.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/popularMoviesSlice.test.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="searchSlice.test.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/searchSlice.test.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="usersSlice.test.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/features/features-tests/usersSlice.test.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.routes">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="about-page.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/routes/about-page.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="error-page.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/routes/error-page.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="forms.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/routes/forms.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="home-page.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/routes/home-page.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.types">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="types.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/types/types.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="api.service.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/utils/api.service.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="api.test.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/utils/api.test.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="hooks.tsx" path="E:/RS-School-2022-2023/React/react-01/react-components/src/utils/hooks.tsx">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+  </project>
+</coverage>
