@@ -4,4 +4,5 @@
 `npm run coverage` - to run unit tests and view test coverage;  
 `npm run test:cypress:open` - to run E2E tests in interactive mode;  
 `npm run test:cypress:run` - to run E2E tests in terminal mode;  
+`npm run cypres:coverage` - to run E2E tests coverage;  
 `npm run linting` - to run lint.
